@@ -1,0 +1,601 @@
+"","Country","Obs","Eposure.to.Meico.City.Policy","Country","Obs"
+"1","Benin","Abortions-no.","High","1994",NA
+"2","Benin","Observation period woman-years","High","1994",NA
+"3","Burkina Faso","Abortions-no.","Low","1994",NA
+"4","Burkina Faso","Observation period woman-years","Low","1994",NA
+"5","Ethiopia","Abortions-no.","Low","1994",NA
+"6","Ethiopia","Observation period woman-years","Low","1994",NA
+"7","Ghana","Abortions-no.","High","1994",NA
+"8","Ghana","Observation period woman-years","High","1994",NA
+"9","Guinea","Abortions-no.","High","1994",NA
+"10","Guinea","Observation period woman-years","High","1994",NA
+"11","Kenya","Abortions-no.","Low","1994",7
+"12","Kenya","Observation period woman-years","Low","1994",6433
+"13","Madagascar","Abortions-no.","High","1994",NA
+"14","Madagascar","Observation period woman-years","High","1994",NA
+"15","Malawi","Abortions, no.","High","1994",1
+"16","Malawi","Observation period woman-years","High","1994",1640
+"17","Mali","Abortions, no.","High","1994",0
+"18","Mali","Observation period woman-years","High","1994",1229
+"19","Mozambique","Abortions, no.","High","1994",NA
+"20","Mozambique","Observation period woman-years","High","1994",NA
+"21","Niger","Abortions, no.","Low","1994",NA
+"22","Niger","Observation period woman-years","Low","1994",NA
+"23","Nigeria","Abortions, no.","Low","1994",NA
+"24","Nigeria","Observation period woman-years","Low","1994",NA
+"25","Rwanda","Abortions-no.","Low","1994",0
+"26","Rwanda","Observation period woman-years","Low","1994",1282
+"27","Senegal","Abortions-no.","Low","1994",NA
+"28","Senegal","Observation period woman-years","Low","1994",NA
+"29","Sierra Leone","Abortions-no.","Low","1994",NA
+"30","Sierra Leone","Observation period woman-years","Low","1994",NA
+"31","Swaziland","Abortions-no.","Low","1994",NA
+"32","Swaziland","Observation period woman-years","Low","1994",NA
+"33","Uganda","Abortions-no.","Low","1994",0
+"34","Uganda","Observation period woman-years","Low","1994",652
+"35","Tanzania","Abortions-no.","High","1994",NA
+"36","Tanzania","Observation period woman-years","High","1994",NA
+"37","Zambia","Abortions-no.","High","1994",NA
+"38","Zambia","Observation period woman-years","High","1994",NA
+"39","Zimbabwe","Abortions-no.","Low","1994",15
+"40","Zimbabwe","Observation period woman-years","Low","1994",10119
+"41","Benin","Abortions-no.","High","1995",NA
+"42","Benin","Observation period woman-years","High","1995",NA
+"43","Burkina Faso","Abortions-no.","Low","1995",NA
+"44","Burkina Faso","Observation period woman-years","Low","1995",NA
+"45","Ethiopia","Abortions-no.","Low","1995",NA
+"46","Ethiopia","Observation period woman-years","Low","1995",NA
+"47","Ghana","Abortions-no.","High","1995",NA
+"48","Ghana","Observation period woman-years","High","1995",NA
+"49","Guinea","Abortions-no.","High","1995",NA
+"50","Guinea","Observation period woman-years","High","1995",NA
+"51","Kenya","Abortions-no.","Low","1995",13
+"52","Kenya","Observation period woman-years","Low","1995",6701
+"53","Madagascar","Abortions-no.","High","1995",NA
+"54","Madagascar","Observation period woman-years","High","1995",NA
+"55","Malawi","Abortions, no.","High","1995",1
+"56","Malawi","Observation period woman-years","High","1995",4262
+"57","Mali","Abortions, no.","High","1995",1
+"58","Mali","Observation period woman-years","High","1995",3075
+"59","Mozambique","Abortions, no.","High","1995",NA
+"60","Mozambique","Observation period woman-years","High","1995",NA
+"61","Niger","Abortions, no.","Low","1995",NA
+"62","Niger","Observation period woman-years","Low","1995",NA
+"63","Nigeria","Abortions, no.","Low","1995",NA
+"64","Nigeria","Observation period woman-years","Low","1995",NA
+"65","Rwanda","Abortions-no.","Low","1995",1
+"66","Rwanda","Observation period woman-years","Low","1995",3143
+"67","Senegal","Abortions-no.","Low","1995",NA
+"68","Senegal","Observation period woman-years","Low","1995",NA
+"69","Sierra Leone","Abortions-no.","Low","1995",NA
+"70","Sierra Leone","Observation period woman-years","Low","1995",NA
+"71","Swaziland","Abortions-no.","Low","1995",NA
+"72","Swaziland","Observation period woman-years","Low","1995",NA
+"73","Uganda","Abortions-no.","Low","1995",0
+"74","Uganda","Observation period woman-years","Low","1995",2165
+"75","Tanzania","Abortions-no.","High","1995",NA
+"76","Tanzania","Observation period woman-years","High","1995",NA
+"77","Zambia","Abortions-no.","High","1995",NA
+"78","Zambia","Observation period woman-years","High","1995",NA
+"79","Zimbabwe","Abortions-no.","Low","1995",14
+"80","Zimbabwe","Observation period woman-years","Low","1995",4657
+"81","Benin","Abortions-no.","High","1996",NA
+"82","Benin","Observation period woman-years","High","1996",NA
+"83","Burkina Faso","Abortions-no.","Low","1996",NA
+"84","Burkina Faso","Observation period woman-years","Low","1996",NA
+"85","Ethiopia","Abortions-no.","Low","1996",NA
+"86","Ethiopia","Observation period woman-years","Low","1996",NA
+"87","Ghana","Abortions-no.","High","1996",NA
+"88","Ghana","Observation period woman-years","High","1996",NA
+"89","Guinea","Abortions-no.","High","1996",NA
+"90","Guinea","Observation period woman-years","High","1996",NA
+"91","Kenya","Abortions-no.","Low","1996",13
+"92","Kenya","Observation period woman-years","Low","1996",6930
+"93","Madagascar","Abortions-no.","High","1996",NA
+"94","Madagascar","Observation period woman-years","High","1996",NA
+"95","Malawi","Abortions, no.","High","1996",1
+"96","Malawi","Observation period woman-years","High","1996",6453
+"97","Mali","Abortions, no.","High","1996",1
+"98","Mali","Observation period woman-years","High","1996",6125
+"99","Mozambique","Abortions, no.","High","1996",NA
+"100","Mozambique","Observation period woman-years","High","1996",NA
+"101","Niger","Abortions, no.","Low","1996",NA
+"102","Niger","Observation period woman-years","Low","1996",NA
+"103","Nigeria","Abortions, no.","Low","1996",NA
+"104","Nigeria","Observation period woman-years","Low","1996",NA
+"105","Rwanda","Abortions-no.","Low","1996",1
+"106","Rwanda","Observation period woman-years","Low","1996",4454
+"107","Senegal","Abortions-no.","Low","1996",NA
+"108","Senegal","Observation period woman-years","Low","1996",NA
+"109","Sierra Leone","Abortions-no.","Low","1996",NA
+"110","Sierra Leone","Observation period woman-years","Low","1996",NA
+"111","Swaziland","Abortions-no.","Low","1996",NA
+"112","Swaziland","Observation period woman-years","Low","1996",NA
+"113","Uganda","Abortions-no.","Low","1996",1
+"114","Uganda","Observation period woman-years","Low","1996",3546
+"115","Tanzania","Abortions-no.","High","1996",NA
+"116","Tanzania","Observation period woman-years","High","1996",NA
+"117","Zambia","Abortions-no.","High","1996",NA
+"118","Zambia","Observation period woman-years","High","1996",NA
+"119","Zimbabwe","Abortions-no.","Low","1996",11
+"120","Zimbabwe","Observation period woman-years","Low","1996",4878
+"121","Benin","Abortions-no.","High","1997",NA
+"122","Benin","Observation period woman-years","High","1997",NA
+"123","Burkina Faso","Abortions-no.","Low","1997",0
+"124","Burkina Faso","Observation period woman-years","Low","1997",1922
+"125","Ethiopia","Abortions-no.","Low","1997",NA
+"126","Ethiopia","Observation period woman-years","Low","1997",NA
+"127","Ghana","Abortions-no.","High","1997",0
+"128","Ghana","Observation period woman-years","High","1997",738
+"129","Guinea","Abortions-no.","High","1997",NA
+"130","Guinea","Observation period woman-years","High","1997",NA
+"131","Kenya","Abortions-no.","Low","1997",15
+"132","Kenya","Observation period woman-years","Low","1997",7193
+"133","Madagascar","Abortions-no.","High","1997",NA
+"134","Madagascar","Observation period woman-years","High","1997",NA
+"135","Malawi","Abortions, no.","High","1997",7
+"136","Malawi","Observation period woman-years","High","1997",7529
+"137","Mali","Abortions, no.","High","1997",1
+"138","Mali","Observation period woman-years","High","1997",7443
+"139","Mozambique","Abortions, no.","High","1997",0
+"140","Mozambique","Observation period woman-years","High","1997",1442
+"141","Niger","Abortions, no.","Low","1997",NA
+"142","Niger","Observation period woman-years","Low","1997",NA
+"143","Nigeria","Abortions, no.","Low","1997",NA
+"144","Nigeria","Observation period woman-years","Low","1997",NA
+"145","Rwanda","Abortions-no.","Low","1997",7
+"146","Rwanda","Observation period woman-years","Low","1997",4905
+"147","Senegal","Abortions-no.","Low","1997",NA
+"148","Senegal","Observation period woman-years","Low","1997",NA
+"149","Sierra Leone","Abortions-no.","Low","1997",NA
+"150","Sierra Leone","Observation period woman-years","Low","1997",NA
+"151","Swaziland","Abortions-no.","Low","1997",NA
+"152","Swaziland","Observation period woman-years","Low","1997",NA
+"153","Uganda","Abortions-no.","Low","1997",3
+"154","Uganda","Observation period woman-years","Low","1997",4110
+"155","Tanzania","Abortions-no.","High","1997",NA
+"156","Tanzania","Observation period woman-years","High","1997",NA
+"157","Zambia","Abortions-no.","High","1997",NA
+"158","Zambia","Observation period woman-years","High","1997",NA
+"159","Zimbabwe","Abortions-no.","Low","1997",21
+"160","Zimbabwe","Observation period woman-years","Low","1997",5098
+"161","Benin","Abortions-no.","High","1998",NA
+"162","Benin","Observation period woman-years","High","1998",NA
+"163","Burkina Faso","Abortions-no.","Low","1998",0
+"164","Burkina Faso","Observation period woman-years","Low","1998",4421
+"165","Ethiopia","Abortions-no.","Low","1998",NA
+"166","Ethiopia","Observation period woman-years","Low","1998",NA
+"167","Ghana","Abortions-no.","High","1998",0
+"168","Ghana","Observation period woman-years","High","1998",1668
+"169","Guinea","Abortions-no.","High","1998",NA
+"170","Guinea","Observation period woman-years","High","1998",NA
+"171","Kenya","Abortions-no.","Low","1998",10
+"172","Kenya","Observation period woman-years","Low","1998",13755
+"173","Madagascar","Abortions-no.","High","1998",1
+"174","Madagascar","Observation period woman-years","High","1998",2487
+"175","Malawi","Abortions, no.","High","1998",7
+"176","Malawi","Observation period woman-years","High","1998",8448
+"177","Mali","Abortions, no.","High","1998",1
+"178","Mali","Observation period woman-years","High","1998",8290
+"179","Mozambique","Abortions, no.","High","1998",1
+"180","Mozambique","Observation period woman-years","High","1998",3828
+"181","Niger","Abortions, no.","Low","1998",NA
+"182","Niger","Observation period woman-years","Low","1998",NA
+"183","Nigeria","Abortions, no.","Low","1998",NA
+"184","Nigeria","Observation period woman-years","Low","1998",NA
+"185","Rwanda","Abortions-no.","Low","1998",7
+"186","Rwanda","Observation period woman-years","Low","1998",6126
+"187","Senegal","Abortions-no.","Low","1998",NA
+"188","Senegal","Observation period woman-years","Low","1998",NA
+"189","Sierra Leone","Abortions-no.","Low","1998",NA
+"190","Sierra Leone","Observation period woman-years","Low","1998",NA
+"191","Swaziland","Abortions-no.","Low","1998",NA
+"192","Swaziland","Observation period woman-years","Low","1998",NA
+"193","Uganda","Abortions-no.","Low","1998",9
+"194","Uganda","Observation period woman-years","Low","1998",4528
+"195","Tanzania","Abortions-no.","High","1998",NA
+"196","Tanzania","Observation period woman-years","High","1998",NA
+"197","Zambia","Abortions-no.","High","1998",NA
+"198","Zambia","Observation period woman-years","High","1998",NA
+"199","Zimbabwe","Abortions-no.","Low","1998",20
+"200","Zimbabwe","Observation period woman-years","Low","1998",5340
+"201","Benin","Abortions-no.","High","1999",NA
+"202","Benin","Observation period woman-years","High","1999",NA
+"203","Burkina Faso","Abortions-no.","Low","1999",2
+"204","Burkina Faso","Observation period woman-years","Low","1999",6495
+"205","Ethiopia","Abortions-no.","Low","1999",6
+"206","Ethiopia","Observation period woman-years","Low","1999",10200
+"207","Ghana","Abortions-no.","High","1999",1
+"208","Ghana","Observation period woman-years","High","1999",2411
+"209","Guinea","Abortions-no.","High","1999",0
+"210","Guinea","Observation period woman-years","High","1999",2179
+"211","Kenya","Abortions-no.","Low","1999",15
+"212","Kenya","Observation period woman-years","Low","1999",6790
+"213","Madagascar","Abortions-no.","High","1999",1
+"214","Madagascar","Observation period woman-years","High","1999",3103
+"215","Malawi","Abortions, no.","High","1999",21
+"216","Malawi","Observation period woman-years","High","1999",17769
+"217","Mali","Abortions, no.","High","1999",4
+"218","Mali","Observation period woman-years","High","1999",9181
+"219","Mozambique","Abortions, no.","High","1999",1
+"220","Mozambique","Observation period woman-years","High","1999",5870
+"221","Niger","Abortions, no.","Low","1999",NA
+"222","Niger","Observation period woman-years","Low","1999",NA
+"223","Nigeria","Abortions, no.","Low","1999",NA
+"224","Nigeria","Observation period woman-years","Low","1999",NA
+"225","Rwanda","Abortions-no.","Low","1999",9
+"226","Rwanda","Observation period woman-years","Low","1999",7043
+"227","Senegal","Abortions-no.","Low","1999",1
+"228","Senegal","Observation period woman-years","Low","1999",3510
+"229","Sierra Leone","Abortions-no.","Low","1999",NA
+"230","Sierra Leone","Observation period woman-years","Low","1999",NA
+"231","Swaziland","Abortions-no.","Low","1999",NA
+"232","Swaziland","Observation period woman-years","Low","1999",NA
+"233","Uganda","Abortions-no.","Low","1999",16
+"234","Uganda","Observation period woman-years","Low","1999",4652
+"235","Tanzania","Abortions-no.","High","1999",8
+"236","Tanzania","Observation period woman-years","High","1999",7978
+"237","Zambia","Abortions-no.","High","1999",NA
+"238","Zambia","Observation period woman-years","High","1999",NA
+"239","Zimbabwe","Abortions-no.","Low","1999",31
+"240","Zimbabwe","Observation period woman-years","Low","1999",5476
+"241","Benin","Abortions-no.","High","2000",0
+"242","Benin","Observation period woman-years","High","2000",2473
+"243","Burkina Faso","Abortions-no.","Low","2000",2
+"244","Burkina Faso","Observation period woman-years","Low","2000",7246
+"245","Ethiopia","Abortions-no.","Low","2000",9
+"246","Ethiopia","Observation period woman-years","Low","2000",10879
+"247","Ghana","Abortions-no.","High","2000",4
+"248","Ghana","Observation period woman-years","High","2000",2776
+"249","Guinea","Abortions-no.","High","2000",0
+"250","Guinea","Observation period woman-years","High","2000",3164
+"251","Kenya","Abortions-no.","Low","2000",16
+"252","Kenya","Observation period woman-years","Low","2000",7058
+"253","Madagascar","Abortions-no.","High","2000",2
+"254","Madagascar","Observation period woman-years","High","2000",3641
+"255","Malawi","Abortions, no.","High","2000",14
+"256","Malawi","Observation period woman-years","High","2000",18118
+"257","Mali","Abortions, no.","High","2000",3
+"258","Mali","Observation period woman-years","High","2000",10967
+"259","Mozambique","Abortions, no.","High","2000",1
+"260","Mozambique","Observation period woman-years","High","2000",6786
+"261","Niger","Abortions, no.","Low","2000",0
+"262","Niger","Observation period woman-years","Low","2000",2939
+"263","Nigeria","Abortions, no.","Low","2000",NA
+"264","Nigeria","Observation period woman-years","Low","2000",NA
+"265","Rwanda","Abortions-no.","Low","2000",5
+"266","Rwanda","Observation period woman-years","Low","2000",9124
+"267","Senegal","Abortions-no.","Low","2000",1
+"268","Senegal","Observation period woman-years","Low","2000",5047
+"269","Sierra Leone","Abortions-no.","Low","2000",NA
+"270","Sierra Leone","Observation period woman-years","Low","2000",NA
+"271","Swaziland","Abortions-no.","Low","2000",NA
+"272","Swaziland","Observation period woman-years","Low","2000",NA
+"273","Uganda","Abortions-no.","Low","2000",12
+"274","Uganda","Observation period woman-years","Low","2000",4628
+"275","Tanzania","Abortions-no.","High","2000",19
+"276","Tanzania","Observation period woman-years","High","2000",8253
+"277","Zambia","Abortions-no.","High","2000",NA
+"278","Zambia","Observation period woman-years","High","2000",NA
+"279","Zimbabwe","Abortions-no.","Low","2000",10
+"280","Zimbabwe","Observation period woman-years","Low","2000",6778
+"281","Benin","Abortions-no.","High","2001",1
+"282","Benin","Observation period woman-years","High","2001",6224
+"283","Burkina Faso","Abortions-no.","Low","2001",2
+"284","Burkina Faso","Observation period woman-years","Low","2001",7840
+"285","Ethiopia","Abortions-no.","Low","2001",17
+"286","Ethiopia","Observation period woman-years","Low","2001",11302
+"287","Ghana","Abortions-no.","High","2001",3
+"288","Ghana","Observation period woman-years","High","2001",3086
+"289","Guinea","Abortions-no.","High","2001",1
+"290","Guinea","Observation period woman-years","High","2001",3929
+"291","Kenya","Abortions-no.","Low","2001",19
+"292","Kenya","Observation period woman-years","Low","2001",7321
+"293","Madagascar","Abortions-no.","High","2001",2
+"294","Madagascar","Observation period woman-years","High","2001",4146
+"295","Malawi","Abortions, no.","High","2001",14
+"296","Malawi","Observation period woman-years","High","2001",10001
+"297","Mali","Abortions, no.","High","2001",4
+"298","Mali","Observation period woman-years","High","2001",14207
+"299","Mozambique","Abortions, no.","High","2001",2
+"300","Mozambique","Observation period woman-years","High","2001",7613
+"301","Niger","Abortions, no.","Low","2001",0
+"302","Niger","Observation period woman-years","Low","2001",4279
+"303","Nigeria","Abortions, no.","Low","2001",NA
+"304","Nigeria","Observation period woman-years","Low","2001",NA
+"305","Rwanda","Abortions-no.","Low","2001",6
+"306","Rwanda","Observation period woman-years","Low","2001",4859
+"307","Senegal","Abortions-no.","Low","2001",1
+"308","Senegal","Observation period woman-years","Low","2001",6395
+"309","Sierra Leone","Abortions-no.","Low","2001",NA
+"310","Sierra Leone","Observation period woman-years","Low","2001",NA
+"311","Swaziland","Abortions-no.","Low","2001",0
+"312","Swaziland","Observation period woman-years","Low","2001",3720
+"313","Uganda","Abortions-no.","Low","2001",9
+"314","Uganda","Observation period woman-years","Low","2001",8997
+"315","Tanzania","Abortions-no.","High","2001",13
+"316","Tanzania","Observation period woman-years","High","2001",8608
+"317","Zambia","Abortions-no.","High","2001",NA
+"318","Zambia","Observation period woman-years","High","2001",NA
+"319","Zimbabwe","Abortions-no.","Low","2001",18
+"320","Zimbabwe","Observation period woman-years","Low","2001",7094
+"321","Benin","Abortions-no.","High","2002",1
+"322","Benin","Observation period woman-years","High","2002",9213
+"323","Burkina Faso","Abortions-no.","Low","2002",1
+"324","Burkina Faso","Observation period woman-years","Low","2002",7840
+"325","Ethiopia","Abortions-no.","Low","2002",18
+"326","Ethiopia","Observation period woman-years","Low","2002",11929
+"327","Ghana","Abortions-no.","High","2002",3
+"328","Ghana","Observation period woman-years","High","2002",3110
+"329","Guinea","Abortions-no.","High","2002",1
+"330","Guinea","Observation period woman-years","High","2002",4426
+"331","Kenya","Abortions-no.","Low","2002",25
+"332","Kenya","Observation period woman-years","Low","2002",7525
+"333","Madagascar","Abortions-no.","High","2002",2
+"334","Madagascar","Observation period woman-years","High","2002",4318
+"335","Malawi","Abortions, no.","High","2002",17
+"336","Malawi","Observation period woman-years","High","2002",10293
+"337","Mali","Abortions, no.","High","2002",2
+"338","Mali","Observation period woman-years","High","2002",7740
+"339","Mozambique","Abortions, no.","High","2002",6
+"340","Mozambique","Observation period woman-years","High","2002",7767
+"341","Niger","Abortions, no.","Low","2002",0
+"342","Niger","Observation period woman-years","Low","2002",5215
+"343","Nigeria","Abortions, no.","Low","2002",NA
+"344","Nigeria","Observation period woman-years","Low","2002",NA
+"345","Rwanda","Abortions-no.","Low","2002",4
+"346","Rwanda","Observation period woman-years","Low","2002",5342
+"347","Senegal","Abortions-no.","Low","2002",4
+"348","Senegal","Observation period woman-years","Low","2002",7222
+"349","Sierra Leone","Abortions-no.","Low","2002",NA
+"350","Sierra Leone","Observation period woman-years","Low","2002",NA
+"351","Swaziland","Abortions-no.","Low","2002",1
+"352","Swaziland","Observation period woman-years","Low","2002",3918
+"353","Uganda","Abortions-no.","Low","2002",12
+"354","Uganda","Observation period woman-years","Low","2002",6839
+"355","Tanzania","Abortions-no.","High","2002",27
+"356","Tanzania","Observation period woman-years","High","2002",8889
+"357","Zambia","Abortions-no.","High","2002",3
+"358","Zambia","Observation period woman-years","High","2002",5603
+"359","Zimbabwe","Abortions-no.","Low","2002",18
+"360","Zimbabwe","Observation period woman-years","Low","2002",7433
+"361","Benin","Abortions-no.","High","2003",1
+"362","Benin","Observation period woman-years","High","2003",10393
+"363","Burkina Faso","Abortions-no.","Low","2003",1
+"364","Burkina Faso","Observation period woman-years","Low","2003",7709
+"365","Ethiopia","Abortions-no.","Low","2003",19
+"366","Ethiopia","Observation period woman-years","Low","2003",12355
+"367","Ghana","Abortions-no.","High","2003",5
+"368","Ghana","Observation period woman-years","High","2003",6942
+"369","Guinea","Abortions-no.","High","2003",1
+"370","Guinea","Observation period woman-years","High","2003",4800
+"371","Kenya","Abortions-no.","Low","2003",16
+"372","Kenya","Observation period woman-years","Low","2003",14169
+"373","Madagascar","Abortions-no.","High","2003",10
+"374","Madagascar","Observation period woman-years","High","2003",17470
+"375","Malawi","Abortions, no.","High","2003",24
+"376","Malawi","Observation period woman-years","High","2003",10586
+"377","Mali","Abortions, no.","High","2003",3
+"378","Mali","Observation period woman-years","High","2003",8716
+"379","Mozambique","Abortions, no.","High","2003",5
+"380","Mozambique","Observation period woman-years","High","2003",7750
+"381","Niger","Abortions, no.","Low","2003",1
+"382","Niger","Observation period woman-years","Low","2003",5807
+"383","Nigeria","Abortions, no.","Low","2003",9
+"384","Nigeria","Observation period woman-years","Low","2003",26808
+"385","Rwanda","Abortions-no.","Low","2003",7
+"386","Rwanda","Observation period woman-years","Low","2003",5635
+"387","Senegal","Abortions-no.","Low","2003",2
+"388","Senegal","Observation period woman-years","Low","2003",7775
+"389","Sierra Leone","Abortions-no.","Low","2003",2
+"390","Sierra Leone","Observation period woman-years","Low","2003",6174
+"391","Swaziland","Abortions-no.","Low","2003",1
+"392","Swaziland","Observation period woman-years","Low","2003",4086
+"393","Uganda","Abortions-no.","Low","2003",14
+"394","Uganda","Observation period woman-years","Low","2003",7125
+"395","Tanzania","Abortions-no.","High","2003",43
+"396","Tanzania","Observation period woman-years","High","2003",9255
+"397","Zambia","Abortions-no.","High","2003",9
+"398","Zambia","Observation period woman-years","High","2003",5817
+"399","Zimbabwe","Abortions-no.","Low","2003",19
+"400","Zimbabwe","Observation period woman-years","Low","2003",768
+"401","Benin","Abortions-no.","High","2004",1
+"402","Benin","Observation period woman-years","High","2004",11401
+"403","Burkina Faso","Abortions-no.","Low","2004",NA
+"404","Burkina Faso","Observation period woman-years","Low","2004",NA
+"405","Ethiopia","Abortions-no.","Low","2004",23
+"406","Ethiopia","Observation period woman-years","Low","2004",12716
+"407","Ghana","Abortions-no.","High","2004",7
+"408","Ghana","Observation period woman-years","High","2004",4012
+"409","Guinea","Abortions-no.","High","2004",1
+"410","Guinea","Observation period woman-years","High","2004",4799
+"411","Kenya","Abortions-no.","Low","2004",5
+"412","Kenya","Observation period woman-years","Low","2004",6827
+"413","Madagascar","Abortions-no.","High","2004",21
+"414","Madagascar","Observation period woman-years","High","2004",16489
+"415","Malawi","Abortions, no.","High","2004",59
+"416","Malawi","Observation period woman-years","High","2004",10848
+"417","Mali","Abortions, no.","High","2004",1
+"418","Mali","Observation period woman-years","High","2004",9496
+"419","Mozambique","Abortions, no.","High","2004",0
+"420","Mozambique","Observation period woman-years","High","2004",73
+"421","Niger","Abortions, no.","Low","2004",1
+"422","Niger","Observation period woman-years","Low","2004",6137
+"423","Nigeria","Abortions, no.","Low","2004",21
+"424","Nigeria","Observation period woman-years","Low","2004",27317
+"425","Rwanda","Abortions-no.","Low","2004",10
+"426","Rwanda","Observation period woman-years","Low","2004",5572
+"427","Senegal","Abortions-no.","Low","2004",3
+"428","Senegal","Observation period woman-years","Low","2004",7767
+"429","Sierra Leone","Abortions-no.","Low","2004",2
+"430","Sierra Leone","Observation period woman-years","Low","2004",6335
+"431","Swaziland","Abortions-no.","Low","2004",2
+"432","Swaziland","Observation period woman-years","Low","2004",4260
+"433","Uganda","Abortions-no.","Low","2004",30
+"434","Uganda","Observation period woman-years","Low","2004",7342
+"435","Tanzania","Abortions-no.","High","2004",74
+"436","Tanzania","Observation period woman-years","High","2004",9450
+"437","Zambia","Abortions-no.","High","2004",9
+"438","Zambia","Observation period woman-years","High","2004",6035
+"439","Zimbabwe","Abortions-no.","Low","2004",34
+"440","Zimbabwe","Observation period woman-years","Low","2004",8011
+"441","Benin","Abortions-no.","High","2005",3
+"442","Benin","Observation period woman-years","High","2005",11447
+"443","Burkina Faso","Abortions-no.","Low","2005",NA
+"444","Burkina Faso","Observation period woman-years","Low","2005",NA
+"445","Ethiopia","Abortions-no.","Low","2005",11
+"446","Ethiopia","Observation period woman-years","Low","2005",12901
+"447","Ghana","Abortions-no.","High","2005",6
+"448","Ghana","Observation period woman-years","High","2005",4161
+"449","Guinea","Abortions-no.","High","2005",1
+"450","Guinea","Observation period woman-years","High","2005",4745
+"451","Kenya","Abortions-no.","Low","2005",7
+"452","Kenya","Observation period woman-years","Low","2005",7066
+"453","Madagascar","Abortions-no.","High","2005",22
+"454","Madagascar","Observation period woman-years","High","2005",14192
+"455","Malawi","Abortions, no.","High","2005",0
+"456","Malawi","Observation period woman-years","High","2005",2639
+"457","Mali","Abortions, no.","High","2005",3
+"458","Mali","Observation period woman-years","High","2005",9567
+"459","Mozambique","Abortions, no.","High","2005",NA
+"460","Mozambique","Observation period woman-years","High","2005",NA
+"461","Niger","Abortions, no.","Low","2005",1
+"462","Niger","Observation period woman-years","Low","2005",6098
+"463","Nigeria","Abortions, no.","Low","2005",31
+"464","Nigeria","Observation period woman-years","Low","2005",28276
+"465","Rwanda","Abortions-no.","Low","2005",12
+"466","Rwanda","Observation period woman-years","Low","2005",5477
+"467","Senegal","Abortions-no.","Low","2005",2
+"468","Senegal","Observation period woman-years","Low","2005",7685
+"469","Sierra Leone","Abortions-no.","Low","2005",1
+"470","Sierra Leone","Observation period woman-years","Low","2005",6585
+"471","Swaziland","Abortions-no.","Low","2005",5
+"472","Swaziland","Observation period woman-years","Low","2005",4416
+"473","Uganda","Abortions-no.","Low","2005",36
+"474","Uganda","Observation period woman-years","Low","2005",7624
+"475","Tanzania","Abortions-no.","High","2005",3
+"476","Tanzania","Observation period woman-years","High","2005",2959
+"477","Zambia","Abortions-no.","High","2005",18
+"478","Zambia","Observation period woman-years","High","2005",6222
+"479","Zimbabwe","Abortions-no.","Low","2005",23
+"480","Zimbabwe","Observation period woman-years","Low","2005",8226
+"481","Benin","Abortions-no.","High","2006",5
+"482","Benin","Observation period woman-years","High","2006",11320
+"483","Burkina Faso","Abortions-no.","Low","2006",NA
+"484","Burkina Faso","Observation period woman-years","Low","2006",NA
+"485","Ethiopia","Abortions-no.","Low","2006",NA
+"486","Ethiopia","Observation period woman-years","Low","2006",NA
+"487","Ghana","Abortions-no.","High","2006",12
+"488","Ghana","Observation period woman-years","High","2006",4287
+"489","Guinea","Abortions-no.","High","2006",NA
+"490","Guinea","Observation period woman-years","High","2006",NA
+"491","Kenya","Abortions-no.","Low","2006",7
+"492","Kenya","Observation period woman-years","Low","2006",7279
+"493","Madagascar","Abortions-no.","High","2006",32
+"494","Madagascar","Observation period woman-years","High","2006",14739
+"495","Malawi","Abortions, no.","High","2006",NA
+"496","Malawi","Observation period woman-years","High","2006",NA
+"497","Mali","Abortions, no.","High","2006",1
+"498","Mali","Observation period woman-years","High","2006",9528
+"499","Mozambique","Abortions, no.","High","2006",NA
+"500","Mozambique","Observation period woman-years","High","2006",NA
+"501","Niger","Abortions, no.","Low","2006",0
+"502","Niger","Observation period woman-years","Low","2006",6050
+"503","Nigeria","Abortions, no.","Low","2006",50
+"504","Nigeria","Observation period woman-years","Low","2006",29052
+"505","Rwanda","Abortions-no.","Low","2006",NA
+"506","Rwanda","Observation period woman-years","Low","2006",NA
+"507","Senegal","Abortions-no.","Low","2006",NA
+"508","Senegal","Observation period woman-years","Low","2006",NA
+"509","Sierra Leone","Abortions-no.","Low","2006",6
+"510","Sierra Leone","Observation period woman-years","Low","2006",6705
+"511","Swaziland","Abortions-no.","Low","2006",14
+"512","Swaziland","Observation period woman-years","Low","2006",4566
+"513","Uganda","Abortions-no.","Low","2006",29
+"514","Uganda","Observation period woman-years","Low","2006",7886
+"515","Tanzania","Abortions-no.","High","2006",NA
+"516","Tanzania","Observation period woman-years","High","2006",NA
+"517","Zambia","Abortions-no.","High","2006",21
+"518","Zambia","Observation period woman-years","High","2006",6482
+"519","Zimbabwe","Abortions-no.","Low","2006",6
+"520","Zimbabwe","Observation period woman-years","Low","2006",1906
+"521","Benin","Abortions-no.","High","2007",NA
+"522","Benin","Observation period woman-years","High","2007",NA
+"523","Burkina Faso","Abortions-no.","Low","2007",NA
+"524","Burkina Faso","Observation period woman-years","Low","2007",NA
+"525","Ethiopia","Abortions-no.","Low","2007",NA
+"526","Ethiopia","Observation period woman-years","Low","2007",NA
+"527","Ghana","Abortions-no.","High","2007",21
+"528","Ghana","Observation period woman-years","High","2007",4383
+"529","Guinea","Abortions-no.","High","2007",NA
+"530","Guinea","Observation period woman-years","High","2007",NA
+"531","Kenya","Abortions-no.","Low","2007",26
+"532","Kenya","Observation period woman-years","Low","2007",7536
+"533","Madagascar","Abortions-no.","High","2007",46
+"534","Madagascar","Observation period woman-years","High","2007",15304
+"535","Malawi","Abortions, no.","High","2007",NA
+"536","Malawi","Observation period woman-years","High","2007",NA
+"537","Mali","Abortions, no.","High","2007",NA
+"538","Mali","Observation period woman-years","High","2007",NA
+"539","Mozambique","Abortions, no.","High","2007",NA
+"540","Mozambique","Observation period woman-years","High","2007",NA
+"541","Niger","Abortions, no.","Low","2007",NA
+"542","Niger","Observation period woman-years","Low","2007",NA
+"543","Nigeria","Abortions, no.","Low","2007",48
+"544","Nigeria","Observation period woman-years","Low","2007",29850
+"545","Rwanda","Abortions-no.","Low","2007",NA
+"546","Rwanda","Observation period woman-years","Low","2007",NA
+"547","Senegal","Abortions-no.","Low","2007",NA
+"548","Senegal","Observation period woman-years","Low","2007",NA
+"549","Sierra Leone","Abortions-no.","Low","2007",12
+"550","Sierra Leone","Observation period woman-years","Low","2007",6828
+"551","Swaziland","Abortions-no.","Low","2007",0
+"552","Swaziland","Observation period woman-years","Low","2007",1074
+"553","Uganda","Abortions-no.","Low","2007",NA
+"554","Uganda","Observation period woman-years","Low","2007",NA
+"555","Tanzania","Abortions-no.","High","2007",NA
+"556","Tanzania","Observation period woman-years","High","2007",NA
+"557","Zambia","Abortions-no.","High","2007",14
+"558","Zambia","Observation period woman-years","High","2007",6624
+"559","Zimbabwe","Abortions-no.","Low","2007",NA
+"560","Zimbabwe","Observation period woman-years","Low","2007",NA
+"561","Benin","Abortions-no.","High","2008",NA
+"562","Benin","Observation period woman-years","High","2008",NA
+"563","Burkina Faso","Abortions-no.","Low","2008",NA
+"564","Burkina Faso","Observation period woman-years","Low","2008",NA
+"565","Ethiopia","Abortions-no.","Low","2008",NA
+"566","Ethiopia","Observation period woman-years","Low","2008",NA
+"567","Ghana","Abortions-no.","High","2008",23
+"568","Ghana","Observation period woman-years","High","2008",4446
+"569","Guinea","Abortions-no.","High","2008",NA
+"570","Guinea","Observation period woman-years","High","2008",NA
+"571","Kenya","Abortions-no.","Low","2008",43
+"572","Kenya","Observation period woman-years","Low","2008",7695
+"573","Madagascar","Abortions-no.","High","2008",53
+"574","Madagascar","Observation period woman-years","High","2008",15756
+"575","Malawi","Abortions, no.","High","2008",NA
+"576","Malawi","Observation period woman-years","High","2008",NA
+"577","Mali","Abortions, no.","High","2008",NA
+"578","Mali","Observation period woman-years","High","2008",NA
+"579","Mozambique","Abortions, no.","High","2008",NA
+"580","Mozambique","Observation period woman-years","High","2008",NA
+"581","Niger","Abortions, no.","Low","2008",NA
+"582","Niger","Observation period woman-years","Low","2008",NA
+"583","Nigeria","Abortions, no.","Low","2008",35
+"584","Nigeria","Observation period woman-years","Low","2008",30347
+"585","Rwanda","Abortions-no.","Low","2008",NA
+"586","Rwanda","Observation period woman-years","Low","2008",NA
+"587","Senegal","Abortions-no.","Low","2008",NA
+"588","Senegal","Observation period woman-years","Low","2008",NA
+"589","Sierra Leone","Abortions-no.","Low","2008",5
+"590","Sierra Leone","Observation period woman-years","Low","2008",6819
+"591","Swaziland","Abortions-no.","Low","2008",NA
+"592","Swaziland","Observation period woman-years","Low","2008",NA
+"593","Uganda","Abortions-no.","Low","2008",NA
+"594","Uganda","Observation period woman-years","Low","2008",NA
+"595","Tanzania","Abortions-no.","High","2008",NA
+"596","Tanzania","Observation period woman-years","High","2008",NA
+"597","Zambia","Abortions-no.","High","2008",NA
+"598","Zambia","Observation period woman-years","High","2008",NA
+"599","Zimbabwe","Abortions-no.","Low","2008",NA
+"600","Zimbabwe","Observation period woman-years","Low","2008",NA
