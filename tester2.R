@@ -25,7 +25,7 @@ new.who <- new.who %>% select(Country, Eposure.to.Meico.City.Policy, Year, Num.A
 
 
 
-write.csv(new.who, file = "final-who.csv")
+# write.csv(new.who, file = "final-who.csv")
 
 
 
