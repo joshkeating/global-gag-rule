@@ -2,11 +2,14 @@
 
 # going to want to compare these data trends to the maternal mortality rate
 
+# setwd("School_16-17/Q2/info498c/project/global-gag-rule/")
+
 library(dplyr)
 library(ggplot2)
 
 who.data <- read.csv("data/final-who.csv")
-
+# mm.data <- read.csv("data/maternal-mortality-WHO.csv")
+new.mm.data <- read.csv("data/Maternal-Mortality-1994-2008.csv")
 
 just.high <- who.data %>% filter(Eposure.to.Meico.City.Policy == "High")
 
@@ -32,6 +35,30 @@ all.plot <- ggplot(just.high, aes(x=Year)) +
   geom_vline(xintercept = 2001)
 
 all.plot
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
