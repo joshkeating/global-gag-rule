@@ -18,22 +18,15 @@ who.data <- who.data %>% select(Country:Woman_years_and_num_abor)
 
 just.b <- who.data %>% filter(Country == "Benin")
 
+new.who <- read.csv("who-edited.csv")
+new.who <- new.who %>% rename(Year = Country.1)
+new.who <- new.who %>% select(Country, Eposure.to.Meico.City.Policy, Year, Num.Ab, woman.years)
 
 
 
 
+write.csv(new.who, file = "final-who.csv")
 
-# 
-# # who.data <-  rename(who.data, X1994 == 1994)
-# 
-# tmp <- who.data %>% gather(Country, Obs, X1994:X2008)
-# 
-# # write.csv(tmp, file = "needswork.csv")
-# 
-# # tmp <- tmp %>% rename(Country1 == Country, Year == Country)
-# # 
-# # 
-# # add.col <- substring(tmp[,4], 2)
-# # add.col <- as.data.frame(add.col)
-# 
-# # tmp <- merge(tmp, add.col)
+
+
+# write.csv(who.data, file = "curr-who.csv")
