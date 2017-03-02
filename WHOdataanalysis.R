@@ -24,7 +24,14 @@ Malawi.plot <- ggplot(just.Malawi, aes(x=Year)) +
 
 Malawi.plot
 
+all.plot <- ggplot(just.high, aes(x=Year)) +
+  geom_smooth(method = "loess", aes(x=Year, y=Num.Ab)) +
+  geom_point(aes(x=Year, y=Num.Ab, colour=Country)) +
+  labs(x = "Year", y = "abor") +
+  ggtitle("title") + 
+  geom_vline(xintercept = 2001)
 
+all.plot
 
 
 
