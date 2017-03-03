@@ -78,9 +78,13 @@ exposure.mm <- merge(just.high, sub.saharan.long)
 
 exposure.mm <- exposure.mm %>% select(-X)
 
+colnames(exposure.mm)[6] <- "Maternal_Mortality"
 
+# need to do another regression with both high and low exposure to see effects
 
+lmfit <- lm(Maternal_Mortality ~ woman.years + Num.Ab, data=exposure.mm)
 
+plot(lmfit)
 
 
 
