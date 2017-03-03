@@ -48,15 +48,22 @@ just.sub.saharan <- new.mm.data %>% filter(Country == "Benin" | Country == "Ghan
 
 
 
-# 
-# all.plot <- ggplot(just.sub.saharan, aes(x=Year)) +
-#   geom_smooth(method = "loess", aes(x=Year, y=Num.Ab)) +
-#   geom_point(aes(x=Year, y=Num.Ab, colour=Country)) +
-#   labs(x = "Year", y = "abor") +
-#   ggtitle("title") + 
-#   geom_vline(xintercept = 2001)
-# 
-# all.plot
+sub.saharan.long <- just.sub.saharan %>% gather(Country, Num_Ab, `1994`:`2008`)
+
+colnames(sub.saharan.long)[2] <- "Year"
+
+# sub.saharan.long$Year <- as.numeric(sub.saharan.long$Year)
+
+sub.saharan.long$Year <- as.numeric(as.character(sub.saharan.long$Year))
+
+sub.mm.plot <- ggplot(sub.saharan.long, aes(x=Year)) +
+  geom_smooth(method = "loess", aes(x=Year, y=Num_Ab)) +
+  geom_point(aes(x=Year, y=Num_Ab, colour=Country)) +
+  labs(x = "Year", y = "abor") +
+  ggtitle("title") +
+  geom_vline(xintercept = 2001)
+
+sub.mm.plot
 
 
 
