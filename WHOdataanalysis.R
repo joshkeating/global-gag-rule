@@ -82,21 +82,39 @@ colnames(exposure.mm)[6] <- "Maternal_Mortality"
 
 # need to do another regression with both high and low exposure to see effects
 
-lmfit <- lm(Maternal_Mortality ~ woman.years + Num.Ab, data=exposure.mm)
+# lmfit <- lm(Maternal_Mortality ~ woman.years + Num.Ab, data=exposure.mm)
+
+# plot(lmfit)
+
+
+all.sub.countries <- who.data %>% distinct(Country)
+
+list <- as.list(all.sub.countries$Country)
+
+# I know, I know
+all.mm <- new.mm.data %>% filter(Country == "Benin" | Country == "Burkina Faso" |Country == "Ethiopia" |
+                                             Country == "Ghana" |Country == "Guinea" |Country == "Kenya" |
+                                             Country == "Madagascar" |Country == "Malawi" |Country == "Mali" |
+                                             Country == "Mozambique"|Country == "Niger" |Country == "Nigeria" |Country == "Rwanda" 
+                                 |Country == "Senegal" |Country == "Sierra Leone" |Country == "Swaziland" |Country == "Uganda" |Country == "Tanzania" 
+                                 |Country == "Zambia" |Country == "Zimbabwe")
+
+
+all.mm.long <- all.mm %>% gather(Country, Num_Ab, `1994`:`2008`)
+
+colnames(all.mm.long)[2] <- "Year"
+
+full.exposure.mm <- merge(who.data, all.mm.long)
+
+colnames(full.exposure.mm)[7] <- "Maternal_Mortality"
+
+full.exposure.mm <- full.exposure.mm %>% select(-X)
+
+# lm(mat.mort ~ policy.exposure + other.variables, data=your.df)
+
+lmfit <- lm(Maternal_Mortality ~ Eposure.to.Meico.City.Policy + Num.Ab, data=full.exposure.mm)
 
 plot(lmfit)
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
