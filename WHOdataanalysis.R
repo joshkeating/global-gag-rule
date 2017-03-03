@@ -9,6 +9,8 @@ library(ggplot2)
 library(tidyr)
 
 who.data <- read.csv("data/final-who.csv")
+
+# this set is limited and therefore not as useful
 # mm.data <- read.csv("data/maternal-mortality-WHO.csv")
 new.mm.data <- read.csv("data/Maternal-Mortality-1994-2008.csv", check.names = FALSE)
 
@@ -44,8 +46,8 @@ sub.countries <- just.high %>% distinct(Country)
 # this is for the sake of time, I know it looks gross
 just.sub.saharan <- new.mm.data %>% filter(Country == "Benin" | Country == "Ghana" |Country == "Guinea" |
                                              Country == "Madagascar" |Country == "Malawi" |Country == "Mali" |
-                                             Country == "Mozambique" |Country == "Tanzania" |Country == "Benin")
-
+                                             Country == "Mozambique" |Country == "Tanzania" |Country == "Benin" |
+                                             Country == "Zambia")
 
 
 sub.saharan.long <- just.sub.saharan %>% gather(Country, Num_Ab, `1994`:`2008`)
@@ -56,6 +58,8 @@ colnames(sub.saharan.long)[2] <- "Year"
 
 sub.saharan.long$Year <- as.numeric(as.character(sub.saharan.long$Year))
 
+# no obvious correlation here
+
 sub.mm.plot <- ggplot(sub.saharan.long, aes(x=Year)) +
   geom_smooth(method = "loess", aes(x=Year, y=Num_Ab)) +
   geom_point(aes(x=Year, y=Num_Ab, colour=Country)) +
@@ -64,6 +68,17 @@ sub.mm.plot <- ggplot(sub.saharan.long, aes(x=Year)) +
   geom_vline(xintercept = 2001)
 
 sub.mm.plot
+
+
+# lm(mat.mort ~ policy.exposure + other.variables, data=your.df)
+# lm documentation - https://stat.ethz.ch/R-manual/R-devel/library/stats/html/lm.html
+
+# bingo
+exposure.mm <- merge(just.high, sub.saharan.long)
+
+exposure.mm <- exposure.mm %>% select(-X)
+
+
 
 
 
