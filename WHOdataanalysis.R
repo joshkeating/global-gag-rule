@@ -12,6 +12,7 @@ who.data <- read.csv("data/final-who.csv")
 
 # this set is limited and therefore not as useful
 # mm.data <- read.csv("data/maternal-mortality-WHO.csv")
+
 new.mm.data <- read.csv("data/Maternal-Mortality-1994-2008.csv", check.names = FALSE)
 
 just.high <- who.data %>% filter(Eposure.to.Meico.City.Policy == "High")
@@ -86,7 +87,6 @@ colnames(exposure.mm)[6] <- "Maternal_Mortality"
 
 # plot(lmfit)
 
-
 all.sub.countries <- who.data %>% distinct(Country)
 
 list <- as.list(all.sub.countries$Country)
@@ -116,10 +116,9 @@ lmfit <- lm(Maternal_Mortality ~ Eposure.to.Meico.City.Policy + Num.Ab, data=ful
 
 plot(lmfit)
 
-
-
-
-
+# lmfit2 <- lm(Year ~ Eposure.to.Meico.City.Policy + Maternal_Mortality, data=full.exposure.mm)
+# 
+# plot(lmfit2)
 
 
 
