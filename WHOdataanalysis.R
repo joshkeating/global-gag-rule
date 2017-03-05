@@ -70,7 +70,6 @@ sub.mm.plot <- ggplot(sub.saharan.long, aes(x=Year)) +
 
 sub.mm.plot
 
-
 # lm(mat.mort ~ policy.exposure + other.variables, data=your.df)
 # lm documentation - https://stat.ethz.ch/R-manual/R-devel/library/stats/html/lm.html
 
