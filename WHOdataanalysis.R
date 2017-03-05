@@ -46,9 +46,9 @@ sub.countries <- just.high %>% distinct(Country)
 
 # this is for the sake of time, I know it looks gross
 just.sub.saharan <- new.mm.data %>% filter(Country == "Benin" | Country == "Ghana" |Country == "Guinea" |
-                                             Country == "Madagascar" |Country == "Malawi" |Country == "Mali" |
-                                             Country == "Mozambique" |Country == "Tanzania" |Country == "Benin" |
-                                             Country == "Zambia")
+                                           Country == "Madagascar" |Country == "Malawi" |Country == "Mali" |
+                                           Country == "Mozambique" |Country == "Tanzania" |Country == "Benin" |
+                                           Country == "Zambia")
 
 
 sub.saharan.long <- just.sub.saharan %>% gather(Country, Num_Ab, `1994`:`2008`)
@@ -91,12 +91,13 @@ all.sub.countries <- who.data %>% distinct(Country)
 list <- as.list(all.sub.countries$Country)
 
 # I know, I know
-all.mm <- new.mm.data %>% filter(Country == "Benin" | Country == "Burkina Faso" |Country == "Ethiopia" |
-                                             Country == "Ghana" |Country == "Guinea" |Country == "Kenya" |
-                                             Country == "Madagascar" |Country == "Malawi" |Country == "Mali" |
-                                             Country == "Mozambique"|Country == "Niger" |Country == "Nigeria" |Country == "Rwanda" 
-                                 |Country == "Senegal" |Country == "Sierra Leone" |Country == "Swaziland" |Country == "Uganda" |Country == "Tanzania" 
-                                 |Country == "Zambia" |Country == "Zimbabwe")
+all.mm <- new.mm.data %>% filter(Country == "Benin" | Country == "Burkina Faso" | Country == "Ethiopia" |
+                                 Country == "Ghana" | Country == "Guinea" | Country == "Kenya" |
+                                 Country == "Madagascar" | Country == "Malawi" | Country == "Mali" |
+                                 Country == "Mozambique"| Country == "Niger" | Country == "Nigeria" |
+                                 Country == "Rwanda" | Country == "Senegal" | Country == "Sierra Leone" |
+                                 Country == "Swaziland" | Country == "Uganda" | Country == "Tanzania" |
+                                 Country == "Zambia" | Country == "Zimbabwe")
 
 
 all.mm.long <- all.mm %>% gather(Country, Num_Ab, `1994`:`2008`)
@@ -116,10 +117,9 @@ lmfit <- lm(Maternal_Mortality ~ Exposure + Num.Ab, data=full.exposure.mm)
 
 plot(lmfit)
 
-# lmfit2 <- lm(Year ~ Eposure.to.Meico.City.Policy + Maternal_Mortality, data=full.exposure.mm)
-# 
-# plot(lmfit2)
+# lmfit2 <- lm(Year ~ Exposure + Maternal_Mortality, data=full.exposure.mm)
 
+# plot(lmfit2)
 
 
 
