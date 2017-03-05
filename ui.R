@@ -21,7 +21,7 @@ navbarPage("Global Gag Rule",
            
                     fluidPage(
                       
-                      titlePanel("Test"),
+                      titlePanel("Title"),
                       
                       
                       plotlyOutput("plot")
