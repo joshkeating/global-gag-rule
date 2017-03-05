@@ -23,6 +23,11 @@ navbarPage("Global Gag Rule",
            tabPanel("Viz 2"
                     
                     
+           ),
+           
+           tabPanel("Viz 3"
+                    
+                    
            )
            
 
