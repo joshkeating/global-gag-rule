@@ -108,17 +108,17 @@ full.exposure.mm <- merge(who.data, all.mm.long)
 colnames(full.exposure.mm)[7] <- "Maternal_Mortality"
 
 full.exposure.mm <- full.exposure.mm %>% select(-X)
+colnames(full.exposure.mm)[3] <- "Exposure"
 
 # lm(mat.mort ~ policy.exposure + other.variables, data=your.df)
 
-lmfit <- lm(Maternal_Mortality ~ Eposure.to.Meico.City.Policy + Num.Ab, data=full.exposure.mm)
+lmfit <- lm(Maternal_Mortality ~ Exposure + Num.Ab, data=full.exposure.mm)
 
 plot(lmfit)
 
 # lmfit2 <- lm(Year ~ Eposure.to.Meico.City.Policy + Maternal_Mortality, data=full.exposure.mm)
 # 
 # plot(lmfit2)
-
 
 
 

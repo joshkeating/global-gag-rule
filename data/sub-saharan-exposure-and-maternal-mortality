@@ -1,0 +1,301 @@
+"","Country","Year","Exposure","Num.Ab","woman.years","Maternal_Mortality"
+"1","Benin",1994,"High",NA,NA,541
+"2","Benin",1995,"High",NA,NA,550
+"3","Benin",1996,"High",NA,NA,561
+"4","Benin",1997,"High",NA,NA,571
+"5","Benin",1998,"High",NA,NA,577
+"6","Benin",1999,"High",NA,NA,576
+"7","Benin",2000,"High",0,2473,572
+"8","Benin",2001,"High",1,6224,561
+"9","Benin",2002,"High",1,9213,549
+"10","Benin",2003,"High",1,10393,538
+"11","Benin",2004,"High",1,11401,523
+"12","Benin",2005,"High",3,11447,502
+"13","Benin",2006,"High",5,11320,494
+"14","Benin",2007,"High",NA,NA,481
+"15","Benin",2008,"High",NA,NA,469
+"16","Burkina Faso",1994,"Low",NA,NA,655
+"17","Burkina Faso",1995,"Low",NA,NA,636
+"18","Burkina Faso",1996,"Low",NA,NA,620
+"19","Burkina Faso",1997,"Low",0,1922,601
+"20","Burkina Faso",1998,"Low",0,4421,581
+"21","Burkina Faso",1999,"Low",2,6495,565
+"22","Burkina Faso",2000,"Low",2,7246,547
+"23","Burkina Faso",2001,"Low",2,7840,530
+"24","Burkina Faso",2002,"Low",1,7840,516
+"25","Burkina Faso",2003,"Low",1,7709,500
+"26","Burkina Faso",2004,"Low",NA,NA,482
+"27","Burkina Faso",2005,"Low",NA,NA,468
+"28","Burkina Faso",2006,"Low",NA,NA,457
+"29","Burkina Faso",2007,"Low",NA,NA,447
+"30","Burkina Faso",2008,"Low",NA,NA,436
+"31","Ethiopia",1994,"Low",NA,NA,1130
+"32","Ethiopia",1995,"Low",NA,NA,1080
+"33","Ethiopia",1996,"Low",NA,NA,1040
+"34","Ethiopia",1997,"Low",NA,NA,998
+"35","Ethiopia",1998,"Low",NA,NA,959
+"36","Ethiopia",1999,"Low",6,10200,927
+"37","Ethiopia",2000,"Low",9,10879,897
+"38","Ethiopia",2001,"Low",17,11302,871
+"39","Ethiopia",2002,"Low",18,11929,846
+"40","Ethiopia",2003,"Low",19,12355,814
+"41","Ethiopia",2004,"Low",23,12716,780
+"42","Ethiopia",2005,"Low",11,12901,743
+"43","Ethiopia",2006,"Low",NA,NA,698
+"44","Ethiopia",2007,"Low",NA,NA,654
+"45","Ethiopia",2008,"Low",NA,NA,608
+"46","Ghana",1994,"High",NA,NA,535
+"47","Ghana",1995,"High",NA,NA,532
+"48","Ghana",1996,"High",NA,NA,527
+"49","Ghana",1997,"High",0,738,515
+"50","Ghana",1998,"High",0,1668,501
+"51","Ghana",1999,"High",1,2411,487
+"52","Ghana",2000,"High",4,2776,467
+"53","Ghana",2001,"High",3,3086,449
+"54","Ghana",2002,"High",3,3110,437
+"55","Ghana",2003,"High",5,6942,420
+"56","Ghana",2004,"High",7,4012,396
+"57","Ghana",2005,"High",6,4161,376
+"58","Ghana",2006,"High",12,4287,358
+"59","Ghana",2007,"High",21,4383,345
+"60","Ghana",2008,"High",23,4446,337
+"61","Guinea",1994,"High",NA,NA,967
+"62","Guinea",1995,"High",NA,NA,964
+"63","Guinea",1996,"High",NA,NA,972
+"64","Guinea",1997,"High",NA,NA,975
+"65","Guinea",1998,"High",NA,NA,977
+"66","Guinea",1999,"High",0,2179,979
+"67","Guinea",2000,"High",0,3146,976
+"68","Guinea",2001,"High",1,3929,973
+"69","Guinea",2002,"High",1,4426,961
+"70","Guinea",2003,"High",1,4800,928
+"71","Guinea",2004,"High",1,4799,882
+"72","Guinea",2005,"High",1,4745,831
+"73","Guinea",2006,"High",NA,NA,791
+"74","Guinea",2007,"High",NA,NA,770
+"75","Guinea",2008,"High",NA,NA,743
+"76","Kenya",1994,"Low",7,6433,684
+"77","Kenya",1995,"Low",13,6701,698
+"78","Kenya",1996,"Low",13,6930,717
+"79","Kenya",1997,"Low",15,7193,729
+"80","Kenya",1998,"Low",10,13755,741
+"81","Kenya",1999,"Low",15,6790,755
+"82","Kenya",2000,"Low",16,7058,759
+"83","Kenya",2001,"Low",19,7321,765
+"84","Kenya",2002,"Low",25,7525,767
+"85","Kenya",2003,"Low",16,14169,768
+"86","Kenya",2004,"Low",5,6827,751
+"87","Kenya",2005,"Low",7,7066,728
+"88","Kenya",2006,"Low",7,7279,702
+"89","Kenya",2007,"Low",26,7536,680
+"90","Kenya",2008,"Low",43,7695,660
+"91","Madagascar",1994,"High",NA,NA,676
+"92","Madagascar",1995,"High",NA,NA,644
+"93","Madagascar",1996,"High",NA,NA,612
+"94","Madagascar",1997,"High",NA,NA,584
+"95","Madagascar",1998,"High",1,2487,561
+"96","Madagascar",1999,"High",1,3103,544
+"97","Madagascar",2000,"High",2,3641,536
+"98","Madagascar",2001,"High",2,4146,531
+"99","Madagascar",2002,"High",2,4318,527
+"100","Madagascar",2003,"High",10,17470,522
+"101","Madagascar",2004,"High",21,16489,519
+"102","Madagascar",2005,"High",22,14192,508
+"103","Madagascar",2006,"High",32,14739,495
+"104","Madagascar",2007,"High",46,15304,482
+"105","Madagascar",2008,"High",53,15756,468
+"106","Malawi",1994,"High",1,1640,956
+"107","Malawi",1995,"High",1,4262,953
+"108","Malawi",1996,"High",1,6453,952
+"109","Malawi",1997,"High",7,7529,939
+"110","Malawi",1998,"High",7,8448,916
+"111","Malawi",1999,"High",21,17769,904
+"112","Malawi",2000,"High",14,18118,890
+"113","Malawi",2001,"High",14,10001,868
+"114","Malawi",2002,"High",17,10293,839
+"115","Malawi",2003,"High",24,10586,783
+"116","Malawi",2004,"High",59,10848,699
+"117","Malawi",2005,"High",0,2639,648
+"118","Malawi",2006,"High",NA,NA,614
+"119","Malawi",2007,"High",NA,NA,613
+"120","Malawi",2008,"High",NA,NA,629
+"121","Mali",1994,"High",0,1229,940
+"122","Mali",1995,"High",1,3075,911
+"123","Mali",1996,"High",1,6125,892
+"124","Mali",1997,"High",1,7443,865
+"125","Mali",1998,"High",1,8290,851
+"126","Mali",1999,"High",4,9181,841
+"127","Mali",2000,"High",3,10967,834
+"128","Mali",2001,"High",4,14207,805
+"129","Mali",2002,"High",2,7740,777
+"130","Mali",2003,"High",3,8716,754
+"131","Mali",2004,"High",1,9496,735
+"132","Mali",2005,"High",3,9567,714
+"133","Mali",2006,"High",1,9528,707
+"134","Mali",2007,"High",NA,NA,697
+"135","Mali",2008,"High",NA,NA,674
+"136","Mozambique",1994,"High",NA,NA,1210
+"137","Mozambique",1995,"High",NA,NA,1150
+"138","Mozambique",1996,"High",NA,NA,1100
+"139","Mozambique",1997,"High",0,1442,1050
+"140","Mozambique",1998,"High",1,3828,1000
+"141","Mozambique",1999,"High",1,5970,956
+"142","Mozambique",2000,"High",1,6786,915
+"143","Mozambique",2001,"High",2,7613,875
+"144","Mozambique",2002,"High",6,7767,840
+"145","Mozambique",2003,"High",5,7750,804
+"146","Mozambique",2004,"High",0,73,783
+"147","Mozambique",2005,"High",NA,NA,762
+"148","Mozambique",2006,"High",NA,NA,741
+"149","Mozambique",2007,"High",NA,NA,716
+"150","Mozambique",2008,"High",NA,NA,682
+"151","Niger",1994,"Low",NA,NA,836
+"152","Niger",1995,"Low",NA,NA,828
+"153","Niger",1996,"Low",NA,NA,823
+"154","Niger",1997,"Low",NA,NA,818
+"155","Niger",1998,"Low",NA,NA,811
+"156","Niger",1999,"Low",NA,NA,805
+"157","Niger",2000,"Low",0,2039,794
+"158","Niger",2001,"Low",0,4279,786
+"159","Niger",2002,"Low",0,5215,774
+"160","Niger",2003,"Low",1,5807,757
+"161","Niger",2004,"Low",1,6137,738
+"162","Niger",2005,"Low",1,6098,723
+"163","Niger",2006,"Low",0,6050,711
+"164","Niger",2007,"Low",NA,NA,699
+"165","Niger",2008,"Low",NA,NA,679
+"166","Nigeria",1994,"Low",NA,NA,1270
+"167","Nigeria",1995,"Low",NA,NA,1250
+"168","Nigeria",1996,"Low",NA,NA,1250
+"169","Nigeria",1997,"Low",NA,NA,1240
+"170","Nigeria",1998,"Low",NA,NA,1220
+"171","Nigeria",1999,"Low",NA,NA,1200
+"172","Nigeria",2000,"Low",NA,NA,1170
+"173","Nigeria",2001,"Low",NA,NA,1140
+"174","Nigeria",2002,"Low",NA,NA,1090
+"175","Nigeria",2003,"Low",9,26808,1040
+"176","Nigeria",2004,"Low",21,27317,986
+"177","Nigeria",2005,"Low",31,28276,946
+"178","Nigeria",2006,"Low",50,29052,890
+"179","Nigeria",2007,"Low",48,29850,884
+"180","Nigeria",2008,"Low",35,30347,829
+"181","Rwanda",1994,"Low",0,1282,1270
+"182","Rwanda",1995,"Low",1,3143,1260
+"183","Rwanda",1996,"Low",1,4454,1260
+"184","Rwanda",1997,"Low",7,4905,1230
+"185","Rwanda",1998,"Low",7,6126,1130
+"186","Rwanda",1999,"Low",9,7043,1070
+"187","Rwanda",2000,"Low",5,9124,1020
+"188","Rwanda",2001,"Low",6,4859,946
+"189","Rwanda",2002,"Low",4,5342,870
+"190","Rwanda",2003,"Low",7,5635,770
+"191","Rwanda",2004,"Low",10,5572,662
+"192","Rwanda",2005,"Low",12,5477,567
+"193","Rwanda",2006,"Low",NA,NA,534
+"194","Rwanda",2007,"Low",NA,NA,495
+"195","Rwanda",2008,"Low",NA,NA,452
+"196","Senegal",1994,"Low",NA,NA,511
+"197","Senegal",1995,"Low",NA,NA,509
+"198","Senegal",1996,"Low",NA,NA,508
+"199","Senegal",1997,"Low",NA,NA,506
+"200","Senegal",1998,"Low",NA,NA,501
+"201","Senegal",1999,"Low",1,3510,496
+"202","Senegal",2000,"Low",1,5047,488
+"203","Senegal",2001,"Low",1,6395,481
+"204","Senegal",2002,"Low",4,7222,474
+"205","Senegal",2003,"Low",2,7775,462
+"206","Senegal",2004,"Low",3,7767,445
+"207","Senegal",2005,"Low",2,7685,427
+"208","Senegal",2006,"Low",NA,NA,426
+"209","Senegal",2007,"Low",NA,NA,414
+"210","Senegal",2008,"Low",NA,NA,398
+"211","Sierra Leone",1994,"Low",NA,NA,2900
+"212","Sierra Leone",1995,"Low",NA,NA,2900
+"213","Sierra Leone",1996,"Low",NA,NA,2890
+"214","Sierra Leone",1997,"Low",NA,NA,2870
+"215","Sierra Leone",1998,"Low",NA,NA,2820
+"216","Sierra Leone",1999,"Low",NA,NA,2750
+"217","Sierra Leone",2000,"Low",NA,NA,2650
+"218","Sierra Leone",2001,"Low",NA,NA,2530
+"219","Sierra Leone",2002,"Low",NA,NA,2390
+"220","Sierra Leone",2003,"Low",2,6174,2270
+"221","Sierra Leone",2004,"Low",2,6335,2110
+"222","Sierra Leone",2005,"Low",1,6585,1990
+"223","Sierra Leone",2006,"Low",6,6705,1880
+"224","Sierra Leone",2007,"Low",12,6828,1800
+"225","Sierra Leone",2008,"Low",5,6819,1730
+"226","Swaziland",1994,"Low",NA,NA,538
+"227","Swaziland",1995,"Low",NA,NA,537
+"228","Swaziland",1996,"Low",NA,NA,545
+"229","Swaziland",1997,"Low",NA,NA,553
+"230","Swaziland",1998,"Low",NA,NA,567
+"231","Swaziland",1999,"Low",NA,NA,579
+"232","Swaziland",2000,"Low",NA,NA,586
+"233","Swaziland",2001,"Low",0,3720,597
+"234","Swaziland",2002,"Low",1,3918,601
+"235","Swaziland",2003,"Low",1,4086,601
+"236","Swaziland",2004,"Low",2,4260,601
+"237","Swaziland",2005,"Low",5,4416,595
+"238","Swaziland",2006,"Low",14,4566,561
+"239","Swaziland",2007,"Low",0,1074,517
+"240","Swaziland",2008,"Low",NA,NA,476
+"241","Tanzania",1994,"High",NA,NA,979
+"242","Tanzania",1995,"High",NA,NA,961
+"243","Tanzania",1996,"High",NA,NA,944
+"244","Tanzania",1997,"High",NA,NA,924
+"245","Tanzania",1998,"High",NA,NA,900
+"246","Tanzania",1999,"High",8,7978,870
+"247","Tanzania",2000,"High",19,8253,842
+"248","Tanzania",2001,"High",13,8608,813
+"249","Tanzania",2002,"High",27,8889,777
+"250","Tanzania",2003,"High",43,9255,747
+"251","Tanzania",2004,"High",74,9450,717
+"252","Tanzania",2005,"High",3,2959,687
+"253","Tanzania",2006,"High",NA,NA,652
+"254","Tanzania",2007,"High",NA,NA,608
+"255","Tanzania",2008,"High",NA,NA,566
+"256","Uganda",1994,"Low",0,652,692
+"257","Uganda",1995,"Low",0,2165,684
+"258","Uganda",1996,"Low",1,3546,678
+"259","Uganda",1997,"Low",3,4110,668
+"260","Uganda",1998,"Low",9,4528,658
+"261","Uganda",1999,"Low",16,4652,639
+"262","Uganda",2000,"Low",12,4628,620
+"263","Uganda",2001,"Low",9,8997,601
+"264","Uganda",2002,"Low",12,6839,576
+"265","Uganda",2003,"Low",14,7125,558
+"266","Uganda",2004,"Low",30,7342,536
+"267","Uganda",2005,"Low",36,7624,504
+"268","Uganda",2006,"Low",29,7886,481
+"269","Uganda",2007,"Low",NA,NA,469
+"270","Uganda",2008,"Low",NA,NA,451
+"271","Zambia",1994,"High",NA,NA,597
+"272","Zambia",1995,"High",NA,NA,596
+"273","Zambia",1996,"High",NA,NA,598
+"274","Zambia",1997,"High",NA,NA,598
+"275","Zambia",1998,"High",NA,NA,596
+"276","Zambia",1999,"High",NA,NA,569
+"277","Zambia",2000,"High",NA,NA,541
+"278","Zambia",2001,"High",NA,NA,518
+"279","Zambia",2002,"High",3,5603,493
+"280","Zambia",2003,"High",9,5817,472
+"281","Zambia",2004,"High",9,6035,414
+"282","Zambia",2005,"High",18,6222,372
+"283","Zambia",2006,"High",21,6482,338
+"284","Zambia",2007,"High",14,6624,311
+"285","Zambia",2008,"High",NA,NA,289
+"286","Zimbabwe",1994,"Low",15,10119,427
+"287","Zimbabwe",1995,"Low",14,4657,449
+"288","Zimbabwe",1996,"Low",11,4878,479
+"289","Zimbabwe",1997,"Low",21,5098,505
+"290","Zimbabwe",1998,"Low",20,5340,530
+"291","Zimbabwe",1999,"Low",31,5476,563
+"292","Zimbabwe",2000,"Low",10,6778,590
+"293","Zimbabwe",2001,"Low",18,7094,621
+"294","Zimbabwe",2002,"Low",18,7433,642
+"295","Zimbabwe",2003,"Low",19,768,657
+"296","Zimbabwe",2004,"Low",34,8011,648
+"297","Zimbabwe",2005,"Low",23,8226,629
+"298","Zimbabwe",2006,"Low",6,1906,600
+"299","Zimbabwe",2007,"Low",NA,NA,564
+"300","Zimbabwe",2008,"Low",NA,NA,533
