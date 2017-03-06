@@ -113,13 +113,19 @@ colnames(full.exposure.mm)[3] <- "Exposure"
 
 # lm(mat.mort ~ policy.exposure + other.variables, data=your.df)
 
-lmfit <- lm(Maternal_Mortality ~ Exposure + Num.Ab, data=full.exposure.mm)
+# lmfit <- lm(Maternal_Mortality ~ Exposure + Num.Ab, data=full.exposure.mm)
+# 
+# plot(lmfit)
 
-plot(lmfit)
+lmfit <- lm(Maternal_Mortality ~ Exposure + Num.Ab, data=full.exposure.mm, na.action = na.omit)
+lmfit
+preds <- predict(lmfit)
+plot(preds, full.exposure.mm$Maternal_Mortality[!is.na(full.exposure.mm$Num.Ab)])
 
-# lmfit2 <- lm(Year ~ Exposure + Maternal_Mortality, data=full.exposure.mm)
+summary(lmfit)
+lmfit2 <- lm(Year ~ Exposure + Maternal_Mortality, data=full.exposure.mm)
 
-# plot(lmfit2)
+plot(lmfit2)
 
 
 
