@@ -1,11 +1,20 @@
 
 library(shiny)
 library(dplyr)
+library(plotly)
 
 function(input, output, session) {
+  Sys.setenv("plotly_username"="pfreschi")
+  Sys.setenv("plotly_api_key"="7hM14QAkcQCzJi0xT75t")
+  
+  setwd("~/Documents/INFO498C/global-gag-rule")
   UN_data <- read.csv('data/UN.csv', na.strings="..", stringsAsFactors = FALSE)
   
-  output$UNplot <- renderPlot({
+  countries <- c("Angola", "Burundi", "Cape Verde", "Central African Republic", "Chad", "Comoros", "Djibouti", "Equatorial Guinea", "Eritrea", "Gabon", "Gambia", "Guinea-Bissau", "Liberia", "Mali", "Mauritania", "Sao Tome and Principe", "the Seychelles", "Somalia", "South Sudan", "Sudan", "Zimbabwe")
+  
+  africanData <- UN_data[UN_data$Country_Area %in% countries,] %>% filter(Population == "MW")
+  
+  output$UNplot <- renderPlotly({
     Country <- factor(africanData$Country_Area)
     
     UNyOpts1 <- c("CP_Any_Method", "CP_Any_Modern_Method", "CP_Any_Traditional_Method", "UN_Unmet_Need_Total", "Demand_Satisfied_By_Modern_Methods")
@@ -18,9 +27,8 @@ function(input, output, session) {
       annotate("rect", xmin = 1984, xmax = 1993, ymin=-Inf, ymax=Inf, alpha = .15)+
       annotate("rect", xmin = 2001, xmax = 2009, ymin=-Inf, ymax=Inf, alpha = .15)+
       labs(title = "Married/In-Union Women", x = "Year", y = input$y)
-
     
-    print(UNviz)
+    ggplotly(UNviz)
   })
   
 }

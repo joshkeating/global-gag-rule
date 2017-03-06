@@ -16,7 +16,7 @@ navbarPage("Global Gag Rule",
                   ),
                 mainPanel(
                   h3(textOutput("caption")),
-                  plotOutput("UNplot")
+                  plotlyOutput("UNplot")
                 )
               )
                     
