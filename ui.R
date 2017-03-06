@@ -26,9 +26,7 @@ navbarPage("Global Gag Rule",
                       
                       
                       plotlyOutput("plot")
-                      
-                      
-                      
+
                       
                     )
                     
