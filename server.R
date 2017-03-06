@@ -9,7 +9,6 @@ colnames(WHO.data)[5] <- "Number_Abortions"
 WHO.just.high <- WHO.data %>% filter(Exposure == "High")
 WHO.just.low <- WHO.data %>% filter(Exposure == "Low")
 
-
 function(input, output, session) {
   
   
@@ -17,7 +16,7 @@ function(input, output, session) {
     geom_smooth(method = "loess", se = FALSE, aes(x=Year, y=Number_Abortions, colour = Country)) + 
     labs(x = "Year", y = "Induced Abortion") + 
     ggtitle("Induced Abortion In Sub-Saharan African Countries") + 
-    geom_vline(xintercept = 2001)
+    geom_vline(xintercept = 2001, linetype="dotted")
 
   plot2 <- ggplot(NULL) +
     geom_smooth(data = WHO.just.high, method = "loess", se = FALSE, aes(x=Year, y=Number_Abortions)) + 
@@ -25,14 +24,14 @@ function(input, output, session) {
     geom_smooth(data = WHO.data, method = "loess", se = FALSE, aes(x=Year, y=Number_Abortions)) + 
     labs(x = "Year", y = "Induced Abortion") + 
     ggtitle("high vs low exp") + 
-    geom_vline(xintercept = 2001)
+    geom_vline(xintercept = 2001, linetype="dotted")
   
-  plot3 <- ggplot(WHO.data, aes(x=Year)) +
-    geom_smooth(method = "loess", se = FALSE, aes(x=Year, y=Maternal_Mortality)) +
-    geom_jitter(aes(x=Year, y=Maternal_Mortality, colour=Country)) +
-    labs(x = "Year", y = "Induced Abortion") +
-    ggtitle("Induced Abortion In Sub-Saharan African Countries") +
-    geom_vline(xintercept = 2001)
+  plot3 <- ggplot(WHO.data) + 
+    geom_smooth(method = "loess", aes(x=Year, y=Maternal_Mortality)) + 
+    geom_jitter(aes(x=Year, y=Maternal_Mortality, colour=Country)) + 
+    labs(x = "Year", y = "Induced Abortion") + 
+    ggtitle("Induced Abortion In Sub-Saharan African Countries") + 
+    geom_vline(xintercept = 2001, linetype="dotted")
   
   
   output$plot1 <- renderPlotly({
@@ -46,6 +45,5 @@ function(input, output, session) {
   output$plot3 <- renderPlotly({
     ggplotly(plot3)
   })
-  
   
 }
