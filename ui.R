@@ -22,8 +22,14 @@ navbarPage("Global Gag Rule",
                     
            ),
            
-           tabPanel("Viz 2"
-                    
+           tabPanel("Viz 2",
+                    fluidPage(
+                      
+                      titlePanel("Induced Abortions and Maternal Mortality in Sub-Saharan African Countries"),
+                      
+                      plotlyOutput("WHOplot1")
+                      
+                    )
                     
            )
            

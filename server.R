@@ -3,6 +3,9 @@ library(shiny)
 library(dplyr)
 library(plotly)
 
+WHO_data <- read.csv("./data/sub-saharan-exposure-and-maternal-mortality", stringsAsFactors = FALSE)
+colnames(data)[5] <- "Number_Abortions"
+
 function(input, output, session) {
   Sys.setenv("plotly_username"="pfreschi")
   Sys.setenv("plotly_api_key"="7hM14QAkcQCzJi0xT75t")
@@ -28,7 +31,19 @@ function(input, output, session) {
       annotate("rect", xmin = 2001, xmax = 2009, ymin=-Inf, ymax=Inf, alpha = .15)+
       labs(title = "Married/In-Union Women", x = "Year", y = input$y)
     
+    WHOviz <- ggplot(WHO_data) +
+      geom_smooth(method = "loess", se = FALSE, aes(x=Year, y=Number_Abortions, colour = Country)) + 
+      labs(x = "Year", y = "Induced Abortion") + 
+      ggtitle("Induced Abortion In Sub-Saharan African Countries") + 
+      geom_vline(xintercept = 2001)
+    
     ggplotly(UNviz)
+    
+    output$WHOplot1 <- renderPlotly({
+      ggplotly(WHOviz)
+    })
+    
+    
   })
   
 }
