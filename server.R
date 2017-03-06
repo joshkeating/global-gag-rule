@@ -35,7 +35,7 @@ function(input, output, session) {
       geom_smooth(method = "loess", se = FALSE, aes(x=Year, y=Number_Abortions, colour = Country)) + 
       labs(x = "Year", y = "Induced Abortion") + 
       ggtitle("Induced Abortion In Sub-Saharan African Countries") + 
-      geom_vline(xintercept = 2001)
+      geom_vline(xintercept = 2001, linetype="dotted")
     
     ggplotly(UNviz)
     
