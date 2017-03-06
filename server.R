@@ -12,46 +12,42 @@ WHO.just.low <- WHO.data %>% filter(Exposure == "Low")
 function(input, output, session) {
   
   
-  plot1 <- ggplot(WHO.data) +
+  Who.by.country <- ggplot(WHO.data) +
     geom_smooth(method = "loess", se = FALSE, aes(x=Year, y=Number_Abortions, colour = Country)) + 
     labs(x = "Year", y = "Induced Abortion") + 
-    ggtitle("Induced Abortion In Sub-Saharan African Countries") + 
-    geom_vline(xintercept = 2001, linetype="dotted")
+    ggtitle("Induced Abortion In Selected Sub-Saharan African Countries") + 
+    geom_vline(xintercept = 2001, linetype="dotted") + 
+    theme_bw()
 
-  # plot2 <- ggplot(NULL) +
-  #   geom_smooth(data = WHO.just.high, method = "loess", se = FALSE, aes(x=Year, y=Number_Abortions)) + 
-  #   geom_smooth(data = WHO.just.low, method = "loess", se = FALSE, aes(x=Year, y=Number_Abortions)) + 
-  #   geom_smooth(data = WHO.data, method = "loess", se = FALSE, aes(x=Year, y=Number_Abortions)) + 
-  #   labs(x = "Year", y = "Induced Abortion") + 
-  #   ggtitle("high vs low exp") + 
-  #   geom_vline(xintercept = 2001, linetype="dotted")
+  Who.by.exp <- ggplot(NULL) +
+    geom_smooth(data = WHO.just.high, method = "loess", se = FALSE, aes(x=Year, y=Number_Abortions, colour = Exposure)) + 
+    geom_smooth(data = WHO.just.low, method = "loess", se = FALSE, aes(x=Year, y=Number_Abortions, colour = Exposure)) + 
+    geom_point(data = WHO.just.high, aes(x=Year, y=Number_Abortions, colour = Exposure)) + 
+    geom_point(data = WHO.just.low, aes(x=Year, y=Number_Abortions, colour = Exposure)) + 
+    labs(x = "Year", y = "Induced Abortion") +
+    ggtitle("Comparing Abortion Rates In Countries With Both High And Low MCP Exposure") + 
+    geom_vline(xintercept = 2001, linetype="dotted") + 
+    theme_bw()
   
-  plot2 <- ggplot(NULL) +
-    geom_smooth(data = WHO.just.high, method = "loess", aes(x=Year, y=Number_Abortions)) + 
-    geom_smooth(data = WHO.just.low, method = "loess", aes(x=Year, y=Number_Abortions)) + 
-    geom_point(data = WHO.just.high, aes(x=Year, y=Number_Abortions, colour=Country)) + 
-    labs(x = "Year", y = "Induced Abortion") + 
-    ggtitle("high vs low exp") + 
-    geom_vline(xintercept = 2001, linetype="dotted")
-  
-  plot3 <- ggplot(WHO.data) + 
+  Who.by.mm <- ggplot(WHO.data) + 
     geom_smooth(method = "loess", aes(x=Year, y=Maternal_Mortality)) + 
     geom_jitter(aes(x=Year, y=Maternal_Mortality, colour=Country)) + 
-     labs(x = "Year", y = "Maternal Mortality") + 
-    ggtitle("Maternal Mortality In Sub-Saharan African Countries") + 
-    geom_vline(xintercept = 2001, linetype="dotted")
+    labs(x = "Year", y = "Maternal Mortality per 100,000") + 
+    ggtitle("Maternal Mortality In Selected Sub-Saharan African Countries") + 
+    geom_vline(xintercept = 2001, linetype="dotted") + 
+    theme_bw()
   
   
   output$plot1 <- renderPlotly({
-    ggplotly(plot1)
+    ggplotly(Who.by.exp)
   })
   
   output$plot2 <- renderPlotly({
-    ggplotly(plot2)
+    ggplotly(Who.by.country)
   })
   
   output$plot3 <- renderPlotly({
-    ggplotly(plot3)
+    ggplotly(Who.by.mm)
   })
   
 }
