@@ -29,7 +29,7 @@ function(input, output, session) {
   plot3 <- ggplot(WHO.data) + 
     geom_smooth(method = "loess", aes(x=Year, y=Maternal_Mortality)) + 
     geom_jitter(aes(x=Year, y=Maternal_Mortality, colour=Country)) + 
-    labs(x = "Year", y = "Induced Abortion") + 
+     labs(x = "Year", y = "Maternal Mortality") + 
     ggtitle("Induced Abortion In Sub-Saharan African Countries") + 
     geom_vline(xintercept = 2001, linetype="dotted")
   
