@@ -4,46 +4,40 @@ library(dplyr)
 library(plotly)
 
 WHO_data <- read.csv("./data/sub-saharan-exposure-and-maternal-mortality", stringsAsFactors = FALSE)
-colnames(data)[5] <- "Number_Abortions"
+UN_data <- read.csv('./data/UN.csv', na.strings="..", stringsAsFactors = FALSE)
+colnames(WHO_data)[5] <- "Number_Abortions"
 
 function(input, output, session) {
-  Sys.setenv("plotly_username"="pfreschi")
-  Sys.setenv("plotly_api_key"="7hM14QAkcQCzJi0xT75t")
   
-  setwd("~/Documents/INFO498C/global-gag-rule")
-  UN_data <- read.csv('data/UN.csv', na.strings="..", stringsAsFactors = FALSE)
   
   countries <- c("Angola", "Burundi", "Cape Verde", "Central African Republic", "Chad", "Comoros", "Djibouti", "Equatorial Guinea", "Eritrea", "Gabon", "Gambia", "Guinea-Bissau", "Liberia", "Mali", "Mauritania", "Sao Tome and Principe", "the Seychelles", "Somalia", "South Sudan", "Sudan", "Zimbabwe")
   
   africanData <- UN_data[UN_data$Country_Area %in% countries,] %>% filter(Population == "MW")
   
-  output$UNplot <- renderPlotly({
+  output$UNplot1 <- renderPlotly({
     Country <- factor(africanData$Country_Area)
     
     UNyOpts1 <- c("CP_Any_Method", "CP_Any_Modern_Method", "CP_Any_Traditional_Method", "UN_Unmet_Need_Total", "Demand_Satisfied_By_Modern_Methods")
     names(UNyOpts1) <- c("Contraceptive Prevalence", "Contraceptive (Modern) Prevalence", "Contraceptive (Traditional) Prevalence", "% with Unmet Needs for Family Planning", "Proportion of Family Planning Demand Satisfied via Modern Methods")
     Selected_Variable <- select(africanData, one_of(UNyOpts1[[input$y]]))
     
-    UNviz <- ggplot(africanData, aes(x=Survey_End_Year, y = Selected_Variable, group=Country_Area)) + 
+    UNviz1 <- ggplot(africanData, aes(x=Survey_End_Year, y = Selected_Variable, group=Country_Area)) + 
       geom_line(aes(colour= Country))+
       geom_point(aes(colour = Country))+
       annotate("rect", xmin = 1984, xmax = 1993, ymin=-Inf, ymax=Inf, alpha = .15)+
       annotate("rect", xmin = 2001, xmax = 2009, ymin=-Inf, ymax=Inf, alpha = .15)+
       labs(title = "Married/In-Union Women", x = "Year", y = input$y)
-    
+
+    ggplotly(UNviz1)
+  })
+  output$WHOplot1 <- renderPlotly({
     WHOviz <- ggplot(WHO_data) +
       geom_smooth(method = "loess", se = FALSE, aes(x=Year, y=Number_Abortions, colour = Country)) + 
       labs(x = "Year", y = "Induced Abortion") + 
       ggtitle("Induced Abortion In Sub-Saharan African Countries") + 
       geom_vline(xintercept = 2001, linetype="dotted")
     
-    ggplotly(UNviz)
-    
-    output$WHOplot1 <- renderPlotly({
-      ggplotly(WHOviz)
-    })
-    
-    
+    ggplotly(WHOviz)
   })
   
 }

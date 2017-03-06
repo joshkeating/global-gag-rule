@@ -10,16 +10,15 @@ navbarPage("Global Gag Rule",
            ),
            
            tabPanel("Viz 1",
-              sidebarLayout(
-                sidebarPanel(
-                  selectInput('y', 'Measure of Reproductive Health', names(UNyOpts1), names(UNyOpts1)[[1]])
-                  ),
-                mainPanel(
-                  h3(textOutput("caption")),
-                  plotlyOutput("UNplot")
-                )
-              )
-                    
+                    titlePanel("Measuring Reproductive Health for Married/In-Union Women in Sub-Saharan African Countries"),
+                    sidebarLayout(
+                      sidebarPanel(
+                        selectInput('y', 'Measure of Reproductive Health', names(UNyOpts1), names(UNyOpts1)[[1]])
+                      ),
+                      mainPanel(
+                        plotlyOutput("UNplot1")
+                      )
+                    )
            ),
            
            tabPanel("Viz 2",
