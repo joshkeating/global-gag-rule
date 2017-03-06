@@ -27,11 +27,12 @@ function(input, output, session) {
     ggtitle("high vs low exp") + 
     geom_vline(xintercept = 2001)
   
-  # plot3 <- ggplot(WHO.just.low) +
-  #   geom_smooth(method = "loess", se = FALSE, aes(x=Year, y=Number_Abortions, colour = Country)) + 
-  #   labs(x = "Year", y = "Induced Abortion") + 
-  #   ggtitle("Induced Abortion In Sub-Saharan African Countries") + 
-  #   geom_vline(xintercept = 2001)
+  plot3 <- ggplot(WHO.data, aes(x=Year)) +
+    geom_smooth(method = "loess", se = FALSE, aes(x=Year, y=Maternal_Mortality)) +
+    geom_jitter(aes(x=Year, y=Maternal_Mortality, colour=Country)) +
+    labs(x = "Year", y = "Induced Abortion") +
+    ggtitle("Induced Abortion In Sub-Saharan African Countries") +
+    geom_vline(xintercept = 2001)
   
   
   output$plot1 <- renderPlotly({
@@ -42,9 +43,9 @@ function(input, output, session) {
     ggplotly(plot2)
   })
   
-  # output$plot3 <- renderPlotly({
-  #   ggplotly(plot3)
-  # })  
+  output$plot3 <- renderPlotly({
+    ggplotly(plot3)
+  })
   
   
 }

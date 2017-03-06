@@ -112,7 +112,6 @@ full.exposure.mm <- full.exposure.mm %>% select(-X)
 colnames(full.exposure.mm)[3] <- "Exposure"
 
 
-
 # lm(mat.mort ~ policy.exposure + other.variables, data=your.df)
 
 # lmfit <- lm(Maternal_Mortality ~ Exposure + Num.Ab, data=full.exposure.mm, na.action = na.omit)
