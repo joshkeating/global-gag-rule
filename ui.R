@@ -22,23 +22,13 @@ navbarPage("Global Gag Rule",
            
                     fluidPage(
                       
-                      titlePanel("Title"),
+                      titlePanel("Induced Abortions and Maternal Mortality in Sub-Saharan African Countries"),
                       
                       
                       plotlyOutput("plot")
                       
                       
                       
-                      # sidebarPanel(
-                      #   
-                      #   # creates select dropdown widget
-                      #   selectInput("select", label = h3("Select Country"), 
-                      #               choices = c(unique(as.character(data$Country))),
-                      #               selected = "Benin"),
-                      #   
-                      #   helpText("Select something")
-                      #   
-                      # )
                       
                     )
                     

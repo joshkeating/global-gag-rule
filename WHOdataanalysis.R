@@ -2,7 +2,7 @@
 
 # going to want to compare these data trends to the maternal mortality rate
 
-# setwd("School_16-17/Q2/info498c/project/global-gag-rule/")
+#setwd("School_16-17/Q2/info498c/project/global-gag-rule/")
 
 library(dplyr)
 library(ggplot2)
@@ -111,14 +111,16 @@ colnames(full.exposure.mm)[7] <- "Maternal_Mortality"
 full.exposure.mm <- full.exposure.mm %>% select(-X)
 colnames(full.exposure.mm)[3] <- "Exposure"
 
+
+
 # lm(mat.mort ~ policy.exposure + other.variables, data=your.df)
 
-lmfit <- lm(Maternal_Mortality ~ Exposure + Num.Ab, data=full.exposure.mm, na.action = na.omit)
-lmfit
-preds <- predict(lmfit)
-plot(preds, full.exposure.mm$Maternal_Mortality[!is.na(full.exposure.mm$Num.Ab)])
-
-summary(lmfit)
+# lmfit <- lm(Maternal_Mortality ~ Exposure + Num.Ab, data=full.exposure.mm, na.action = na.omit)
+# lmfit
+# preds <- predict(lmfit)
+# plot(preds, full.exposure.mm$Maternal_Mortality[!is.na(full.exposure.mm$Num.Ab)])
+# 
+# summary(lmfit)
 # lmfit2 <- lm(Year ~ Exposure + Maternal_Mortality, data=full.exposure.mm)
 
 # plot(lmfit2)
