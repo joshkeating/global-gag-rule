@@ -2,6 +2,7 @@
 library(shiny)
 library(dplyr)
 library(markdown)
+library(plotly)
 
 data <- read.csv("./data/sub-saharan-exposure-and-maternal-mortality", stringsAsFactors = FALSE)
 
