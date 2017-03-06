@@ -14,16 +14,17 @@ function(input, output, session) {
   
   
   plot1 <- ggplot(WHO.data) +
-    geom_smooth(method = "loess", se = FALSE, aes(x=Year, y=Number_Abortions)) + 
+    geom_smooth(method = "loess", se = FALSE, aes(x=Year, y=Number_Abortions, colour = Country)) + 
     labs(x = "Year", y = "Induced Abortion") + 
     ggtitle("Induced Abortion In Sub-Saharan African Countries") + 
     geom_vline(xintercept = 2001)
 
   plot2 <- ggplot(NULL) +
-    geom_smooth(data = WHO.just.high, method = "loess", se = FALSE, aes(x=Year, y=Number_Abortions, colour = "#800000")) + 
+    geom_smooth(data = WHO.just.high, method = "loess", se = FALSE, aes(x=Year, y=Number_Abortions)) + 
     geom_smooth(data = WHO.just.low, method = "loess", se = FALSE, aes(x=Year, y=Number_Abortions)) + 
+    geom_smooth(data = WHO.data, method = "loess", se = FALSE, aes(x=Year, y=Number_Abortions)) + 
     labs(x = "Year", y = "Induced Abortion") + 
-    ggtitle("Induced Abortion In Sub-Saharan African Countries") + 
+    ggtitle("high vs low exp") + 
     geom_vline(xintercept = 2001)
   
   # plot3 <- ggplot(WHO.just.low) +
