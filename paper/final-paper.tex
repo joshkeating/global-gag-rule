@@ -167,12 +167,17 @@ Reagan administration signed into law the ``Mexico City policy'', named
 for the city in which it was signed. The policy requires all non
 governmental organizations operating abroad to refrain from performing,
 advising on or endorsing abortion as a method of family planning if they
-wish to continue to receive receive federal funding. The policy has had
-a tumultuous history, either being reinstated or rescinded depending on
-the party affiliation of the current president. Starting with Bill
-Clinton in 1993 the policy was rescinded, then restored by George W.
-Bush in 2001, rescinded again by Barack Obama in 2009, and most recently
-restored by Donald J. Trump in 2017.
+wish to continue to receive receive federal funding.\footnote{The policy
+  mandates that NGOs pledge to not ``perform or actively promote
+  abortion as a method of family planning'' with non-U.S. funds as a
+  condition for receiving U.S. global family planning assistance.} The
+policy has had a tumultuous history, either being reinstated or
+rescinded depending on the party affiliation of the current president.
+Starting with Bill Clinton in 1993 the policy was rescinded, then
+restored by George W. Bush in 2001, rescinded again by Barack Obama in
+2009, and most recently restored by Donald J. Trump in 2017\footnote{As
+  of Jan. 23, 2017, the policy extends to any other U.S. global health
+  assistance, including U.S. global HIV and maternal and child health.}.
 
 At it's heart, the ban is propelled by the desire to limit the use of
 U.S. taxpayer dollars to pay for abortion or abortion-related services.
@@ -266,13 +271,18 @@ format of the column headers. Once the columns were renamed, records for
 countries in Sub-Saharan Africa were aggregated over time using dplyr.
 Reproductive health metrics for married/in-union women of reproductive
 age were examined across the time periods where the Mexico City Policy
-was active and inactive in the United States.
+was active and inactive in the United States. Our hypothesis was that
+during periods where the policy was actively blocking funding,
+contraceptive prevalence would decrease, and unmet needs for family
+planning would increase. This would make sense because the policy blocks
+the entirety of funding for an organization if it provides any abortion
+counseling, so many NGOs would not be able to operate.
 
 In approaching this analysis we needed to use some unconventional
 methods of data sourcing. For the data on induced abortions and exposure
 to the ``Global Gag Rule'' (GGR) we scraped a \texttt{.html} table that
 the WHO made available through the Stanford paper published on their
-website. Unfortunately for me, the hierarchy of the table did not easily
+website. Unfortunately for us, the hierarchy of the table did not easily
 lend itself to reshaping in R so a considerable amount of work was done
 to convert it into a long form \texttt{.csv} file. We were curious about
 some of the potential public health effects that the ban could have had
@@ -292,19 +302,45 @@ abortion rates in the targeted countries.
 
 \section{Results}\label{results}
 
-At vero eos et accusamus et iusto odio dignissimos ducimus qui
-blanditiis praesentium voluptatum deleniti atque corrupti quos dolores
-et quas molestias excepturi sint occaecati cupiditate non provident,
-similique sunt in culpa qui officia deserunt mollitia animi, id est
-laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita
-distinctio. Nam libero tempore, cum soluta nobis est eligendi optio
-cumque nihil impedit quo minus id quod maxime placeat facere possimus,
-omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem
-quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet
-ut et voluptates repudiandae sint et molestiae non recusandae. Itaque
-earum rerum hic tenetur a sapiente delectus, ut aut reiciendis
-voluptatibus maiores alias consequatur aut perferendis doloribus
-asperiores repellat
+An analysis of the United Nations' data revealed several key insights.
+Throughout the period of 1984 to 2014, among all Sub-Saharan African
+countries, Zimbabwe and Cabo Verde had the highest prevalence of
+contraceptives, especially modern ones, which include sterilization,
+intra-uterine device (IUD), implant, injectables, pills, condoms,
+barrier methods, LAM, emergency contraception and others. This indicates
+a strong presence of sexual education in the population. Zimbabwe, which
+has a ``low'' exposure to the Mexico City Policy, as found in the WHO
+analysis, appears to have a contraceptive prevalence level that is
+largely unaffected by the activity and inactivity of the policy, as
+there is an upward increase for every year except 2011. In 2014, 66.9\%
+of heterosexual couples in Zimbabwe used modern or traditional
+contraception. On the other hand, one year after, only 5.7\% of the same
+grouping in Chad used any form of modern or traditional contraception,
+which was extremely low. Mali, a country that is known to have a
+``high'' exposure to the policy, did not rise and fall in contraceptive
+prevalence as we anticipated in correlation with changes in the
+legislation. Instead, it exhibited a slower but fairly steady upward
+trend, just as Zimbabwe did. The proportion of family planning demand
+satisfied by modern methods grew every year, however, the percent with
+unmet needs for family planning rose until around 2001 when it began to
+fall. As with these, and most of the other countries, there are not many
+obvious trends during the time periods when the Mexico City Policy was
+in effect.
+
+In exploring the differences in the trends of induced abortion rates for
+the two main subsets of our data, we looked at the countries that were
+rated with a low exposure to the policy and countries rated with a high
+exposure. Though we saw an increase in abortion rates in countries that
+are considered highly exposed to the policy, the statistical
+significance was negligible.(Figure x.) The two curves were calculated
+from ``observational data'' using a locally weighted smoothing (lowess)
+method. The linear regression model that we performed used the variation
+in policy exposure evaluated against variation in the rates of maternal
+mortality to determine of a connection could be made between the
+variables. The model that we performed did not show that there was a
+meaningful relationship.
+
+(PUT JOHNS RESULTS HERE)
 
 \section{Discussion}\label{discussion}
 
