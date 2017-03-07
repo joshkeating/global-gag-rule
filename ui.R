@@ -44,10 +44,13 @@ navbarPage("Global Gag Rule",
                         exposure compared against variation in the rates of maternal mortality while subsetting for abortion rates
                         in the targeted countries. "),
                       br(),
-                      p("testing"),
-                      
+                      p("Write more text here"),
+                      br(),
+                      p("write about this graph here."),
                       plotlyOutput("WHOplot1"),
+                      p("write about this graph here."),
                       plotlyOutput("WHOplot2"),
+                      p("write about this graph here."),
                       plotlyOutput("WHOplot3")
                       
                     )
