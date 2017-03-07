@@ -35,7 +35,11 @@ navbarPage("Global Gag Rule",
                       
                     )
                     
+           ),
+           tabPanel("Foreign Aid Breakdown",
+                    fluidPage(
+                      titlePanel("Induced Abortions and Maternal Mortality in Sub-Saharan African Countries"),
+                      plotlyOutput("aidplot1")
+                    )
            )
-           
-
 )
