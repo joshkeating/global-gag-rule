@@ -19,6 +19,23 @@ fontsize: 11pt
 biblio-style: apsr
 ---
 
+```{r setup, include=FALSE}
+
+knitr::opts_chunk$set(echo = TRUE)
+
+library(dplyr)
+library(survey)
+library(ggplot2)
+library(scales)
+
+WHO_data <- read.csv("../data/sub-saharan-exposure-and-maternal-mortality", stringsAsFactors = FALSE)
+colnames(WHO_data)[5] <- "Number_Abortions"
+WHO.just.high <- WHO_data %>% filter(Exposure == "High")
+WHO.just.low <- WHO_data %>% filter(Exposure == "Low")
+
+
+```
+
 # Introduction
 
 At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae. Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus asperiores repellat
@@ -49,6 +66,25 @@ tmp <- "test"
 ```
 
 At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae. Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus asperiores repellat
+
+need to fix this spacing here
+
+
+```{r, echo = FALSE, warning = FALSE}
+
+Who.by.exp <- ggplot(NULL) +
+    geom_smooth(data = WHO.just.high, method = "loess", se = FALSE, aes(x=Year, y=Number_Abortions, colour = Exposure)) + 
+    geom_smooth(data = WHO.just.low, method = "loess", se = FALSE, aes(x=Year, y=Number_Abortions, colour = Exposure)) + 
+    geom_point(data = WHO.just.high, aes(x=Year, y=Number_Abortions, colour = Exposure)) + 
+    geom_point(data = WHO.just.low, aes(x=Year, y=Number_Abortions, colour = Exposure)) + 
+    labs(x = "Year", y = "Induced Abortion") +
+    ggtitle("Abortion Rates For Both Levels Of Exposure") + 
+    geom_vline(xintercept = 2001, linetype="dotted") + 
+    theme_bw()
+
+Who.by.exp
+
+```
 
 
 # Results
