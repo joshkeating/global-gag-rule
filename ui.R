@@ -30,15 +30,22 @@ navbarPage("Global Gag Rule",
                     fluidPage(
                       
                       titlePanel("Induced Abortions and Maternal Mortality in Sub-Saharan African Countries"),
-                      p("Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium,
-                        totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta
-                        sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia
-                        consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem
-                        ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut
-                        labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem
-                        ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure 
-                        reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum 
-                        fugiat quo voluptas nulla pariatur."),
+                      p("In approaching this analysis I needed to use some unconventional methods of data sourcing. For the 
+                        data on induced abortions and exposure to the “Global Gag Rule” (GGR) I scraped a html table that the
+                        WHO made available through the Stanford paper published on their website. Unfortunately for me, the
+                        hierarchy of the table did not easily lend itself to reshaping in R so a considerable amount of work
+                        was done to convert it into a long form csv file. I was curious about some of the potential public 
+                        health effects that the ban could have had historically on an area such as maternal mortality. The
+                        hypothesis that maternal mortality would be higher after the ban was instituted was based on my intuition.
+                        I found a dataset from the World Health Organization covering maternal mortality rates from 1990 to 2015
+                        for every country. From there I subsetted the data to focus on the 20 sub-Saharan countries that I had
+                        exposure data on and added those rates onto my dataset. After I had a complete dataset I performed  a 
+                        linear regression to gauge whether my hypothesis was correct. In the model I used the variation in policy
+                        exposure compared against variation in the rates of maternal mortality while subsetting for abortion rates
+                        in the targeted countries. "),
+                      br(),
+                      p("testing"),
+                      
                       plotlyOutput("WHOplot1"),
                       plotlyOutput("WHOplot2"),
                       plotlyOutput("WHOplot3")
