@@ -59,37 +59,11 @@ The U.S. Administration of International Development, as the major government ag
 
 # Methods
 
-Heres some emmbeded code
+While the World Contraceptive Use 2016 dataset included levels of contraceptive and family planning methods for an extensive number of countries across the world, we chose to analyze a certain subset of this data. After the raw excel data was downloaded from the United Nations’ website, it required a substantial amount of cleaning because of the format of the column headers. Once the columns were renamed, records for countries in Sub-Saharan Africa were aggregated over time using dplyr. Reproductive health metrics for married/in-union women of reproductive age were examined across the time periods where the Mexico City Policy was active and inactive in the United States.
 
-```{r, tidy=TRUE}
-# lmfit <- lm(Maternal_Mortality ~ Exposure + Num.Ab, data=full.exposure.mm, na.action = na.omit)
-# lmfit
-# preds <- predict(lmfit)
-# plot(preds, full.exposure.mm$Maternal_Mortality[!is.na(full.exposure.mm$Num.Ab)])
+In approaching this analysis we needed to use some unconventional methods of data sourcing. For the data on induced abortions and exposure to the “Global Gag Rule” (GGR) we scraped a `.html` table that the WHO made available through the Stanford paper published on their website. Unfortunately for me, the hierarchy of the table did not easily lend itself to reshaping in R so a considerable amount of work was done to convert it into a long form `.csv` file. We were curious about some of the potential public health effects that the ban could have had historically on an area such as maternal mortality. The hypothesis that maternal mortality would be higher after the ban was instituted was based on our intuition. We used a dataset from the World Health Organization covering maternal mortality rates from 1990 to 2015 for every country. From there we broke the data into subsets to focus on the 20 sub-Saharan countries that we had exposure data on and added those rates onto our dataset. After we had a complete dataset we performed a linear regression to gauge whether our hypothesis was correct. In the model we used the variation in policy exposure compared against variation in the rates of maternal mortality while subsetting for abortion rates in the targeted countries.
 
-tmp <- "test"
-
-```
-
-At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae. Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus asperiores repellat
-
-need to fix this spacing here
-
-
-```{r, echo = FALSE, warning = FALSE, fig.cap="Abortion Rates For Both Levels Of Exposure"}
-
-Who.by.exp <- ggplot(NULL) +
-    geom_smooth(data = WHO.just.high, method = "loess", se = FALSE, aes(x=Year, y=Number_Abortions, colour = Exposure)) + 
-    geom_smooth(data = WHO.just.low, method = "loess", se = FALSE, aes(x=Year, y=Number_Abortions, colour = Exposure)) + 
-    geom_point(data = WHO.just.high, aes(x=Year, y=Number_Abortions, colour = Exposure)) + 
-    geom_point(data = WHO.just.low, aes(x=Year, y=Number_Abortions, colour = Exposure)) + 
-    labs(x = "Year", y = "Induced Abortion") +
-    geom_vline(xintercept = 2001, linetype="dotted") + 
-    theme_bw()
-
-Who.by.exp
-
-```
+(PUT JOHNS METHODS HERE)
 
 
 # Results

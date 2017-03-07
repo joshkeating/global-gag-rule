@@ -38,46 +38,6 @@
 
 \setcounter{secnumdepth}{0}
 
-\usepackage{color}
-\usepackage{fancyvrb}
-\newcommand{\VerbBar}{|}
-\newcommand{\VERB}{\Verb[commandchars=\\\{\}]}
-\DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\}}
-% Add ',fontsize=\small' for more characters per line
-\usepackage{framed}
-\definecolor{shadecolor}{RGB}{248,248,248}
-\newenvironment{Shaded}{\begin{snugshade}}{\end{snugshade}}
-\newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
-\newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{#1}}
-\newcommand{\DecValTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
-\newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
-\newcommand{\FloatTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
-\newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
-\newcommand{\CharTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
-\newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
-\newcommand{\StringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
-\newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
-\newcommand{\SpecialStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
-\newcommand{\ImportTok}[1]{#1}
-\newcommand{\CommentTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
-\newcommand{\DocumentationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
-\newcommand{\AnnotationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
-\newcommand{\CommentVarTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
-\newcommand{\OtherTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{#1}}
-\newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
-\newcommand{\VariableTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
-\newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
-\newcommand{\OperatorTok}[1]{\textcolor[rgb]{0.81,0.36,0.00}{\textbf{#1}}}
-\newcommand{\BuiltInTok}[1]{#1}
-\newcommand{\ExtensionTok}[1]{#1}
-\newcommand{\PreprocessorTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
-\newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.77,0.63,0.00}{#1}}
-\newcommand{\RegionMarkerTok}[1]{#1}
-\newcommand{\InformationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
-\newcommand{\WarningTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
-\newcommand{\AlertTok}[1]{\textcolor[rgb]{0.94,0.16,0.16}{#1}}
-\newcommand{\ErrorTok}[1]{\textcolor[rgb]{0.64,0.00,0.00}{\textbf{#1}}}
-\newcommand{\NormalTok}[1]{#1}
 
 \usepackage{graphicx}
 % We will generate all images so they have a width \maxwidth. This means
@@ -297,39 +257,38 @@ performed analysis on.
 
 \section{Methods}\label{methods}
 
-Heres some emmbeded code
+While the World Contraceptive Use 2016 dataset included levels of
+contraceptive and family planning methods for an extensive number of
+countries across the world, we chose to analyze a certain subset of this
+data. After the raw excel data was downloaded from the United Nations'
+website, it required a substantial amount of cleaning because of the
+format of the column headers. Once the columns were renamed, records for
+countries in Sub-Saharan Africa were aggregated over time using dplyr.
+Reproductive health metrics for married/in-union women of reproductive
+age were examined across the time periods where the Mexico City Policy
+was active and inactive in the United States.
 
-\begin{Shaded}
-\begin{Highlighting}[]
-\CommentTok{# lmfit <- lm(Maternal_Mortality ~ Exposure + Num.Ab, data=full.exposure.mm,}
-\CommentTok{# na.action = na.omit) lmfit preds <- predict(lmfit) plot(preds,}
-\CommentTok{# full.exposure.mm$Maternal_Mortality[!is.na(full.exposure.mm$Num.Ab)])}
+In approaching this analysis we needed to use some unconventional
+methods of data sourcing. For the data on induced abortions and exposure
+to the ``Global Gag Rule'' (GGR) we scraped a \texttt{.html} table that
+the WHO made available through the Stanford paper published on their
+website. Unfortunately for me, the hierarchy of the table did not easily
+lend itself to reshaping in R so a considerable amount of work was done
+to convert it into a long form \texttt{.csv} file. We were curious about
+some of the potential public health effects that the ban could have had
+historically on an area such as maternal mortality. The hypothesis that
+maternal mortality would be higher after the ban was instituted was
+based on our intuition. We used a dataset from the World Health
+Organization covering maternal mortality rates from 1990 to 2015 for
+every country. From there we broke the data into subsets to focus on the
+20 sub-Saharan countries that we had exposure data on and added those
+rates onto our dataset. After we had a complete dataset we performed a
+linear regression to gauge whether our hypothesis was correct. In the
+model we used the variation in policy exposure compared against
+variation in the rates of maternal mortality while subsetting for
+abortion rates in the targeted countries.
 
-\NormalTok{tmp <-}\StringTok{ "test"}
-\end{Highlighting}
-\end{Shaded}
-
-At vero eos et accusamus et iusto odio dignissimos ducimus qui
-blanditiis praesentium voluptatum deleniti atque corrupti quos dolores
-et quas molestias excepturi sint occaecati cupiditate non provident,
-similique sunt in culpa qui officia deserunt mollitia animi, id est
-laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita
-distinctio. Nam libero tempore, cum soluta nobis est eligendi optio
-cumque nihil impedit quo minus id quod maxime placeat facere possimus,
-omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem
-quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet
-ut et voluptates repudiandae sint et molestiae non recusandae. Itaque
-earum rerum hic tenetur a sapiente delectus, ut aut reiciendis
-voluptatibus maiores alias consequatur aut perferendis doloribus
-asperiores repellat
-
-need to fix this spacing here
-
-\begin{figure}
-\centering
-\includegraphics{final-paper_files/figure-latex/unnamed-chunk-2-1.pdf}
-\caption{Abortion Rates For Both Levels Of Exposure}
-\end{figure}
+(PUT JOHNS METHODS HERE)
 
 \section{Results}\label{results}
 
@@ -365,7 +324,7 @@ asperiores repellat
 
 \begin{figure}
 \centering
-\includegraphics{final-paper_files/figure-latex/unnamed-chunk-3-1.pdf}
+\includegraphics{final-paper_files/figure-latex/unnamed-chunk-1-1.pdf}
 \caption{Test}
 \end{figure}
 
