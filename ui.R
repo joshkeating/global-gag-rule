@@ -11,7 +11,36 @@ countries <- c("Angola", "Burundi", "Cabo Verde", "Central African Republic", "C
 navbarPage("Global Gag Rule",
            
            tabPanel("Summary", 
-                    verbatimTextOutput("summary")
+                    fluidPage(
+                      titlePanel("Overview And Impact Of The Mexico City Policy "),
+                      h4("Or, The Global Gag Rule"),
+                      br(),
+                      p("The issue of abortion in the United States is one that is fiercely debated and divides large segments
+                        of the population. These divides are inherently partisan and therefore have led to legislation. In 1984
+                        the Reagan administration signed into law the “Mexico City policy”, named for the city in which it was 
+                        signed. The policy requires all non governmental organizations operating abroad to refrain from performing,
+                        advising on or endorsing abortion as a method of family planning if they wish to continue to receive 
+                        receive federal funding. The policy has had a tumultuous history, either being reinstated or rescinded 
+                        depending on the party affiliation of the current president. Starting with Bill Clinton in 1993 the policy
+                        was rescinded, then restored by George W. Bush in 2001, rescinded again by Barack Obama in 2009, and most 
+                        recently restored by Donald J. Trump in 2017."),
+                      br(),
+                      p("At it’s heart, the ban is propelled by the desire to limit the use of U.S. taxpayer dollars to pay for 
+                        abortion or abortion-related services. The consequences of this ban include the termination of abortion 
+                        related services such as; education, family planning, counseling, and training. The all or nothing nature
+                        of the ban would also cut off funds for non abortion related health services that would be offered at non
+                        governmental health providers. This presents some serious public health concerns for areas of the world 
+                        where these services are essential for maternal health and prenatal care. "),
+                      br(),
+                      p("We hypothesized that the institution of the ban could lead to a reduction in family planning services which
+                        could then lead to an increase in induced abortions. By restricting the flow of funds into health clinics that
+                        provide services related to abortion among others, the U.S. government restricts the amount of care that can be
+                        provided to those utilizing those services. The aim of this project was to gather, analyze, and present data on
+                        the past effects of the Global Gag Rule and create a resource that assists our audience in understanding the scope
+                        of the policy, its observable impact on women’s health, and the pathways through which it influences public health
+                        policy decisions outside of the United States.")
+                    )
+                    
            ),
            
            tabPanel("Viz 1",
