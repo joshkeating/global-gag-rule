@@ -88,39 +88,23 @@ function(input, output, session) {
       height = 800,
       orientation = 'v'
     ) %>%
-      add_trace(
-        y = filter(yearly, fiscal_year=="2015")$yearly_disbursements %>% head(10),
-        name = "2015"
-      ) %>%
-      add_trace(
-        y = filter(yearly, fiscal_year=="2014")$yearly_disbursements %>% head(10),
-        name = "2014"
-      ) %>%
-      add_trace(
-        y = filter(yearly, fiscal_year=="2013")$yearly_disbursements %>% head(10),
-        name = "2013"
-      ) %>%
-      add_trace(
-        y = filter(yearly, fiscal_year=="2012")$yearly_disbursements %>% head(10),
-        name = "2012"
-      ) %>%
-      add_trace(
-        y = filter(yearly, fiscal_year=="2011")$yearly_disbursements %>% head(10),
-        name = "2011"
-      ) %>%
-      add_trace(
-        y = filter(yearly, fiscal_year=="2010")$yearly_disbursements %>% head(10),
-        name = "2010"
-      ) %>%
-      add_trace(
-        y = filter(yearly, fiscal_year=="2015")$yearly_disbursements %>% head(10),
-        name = "2009"
-      ) %>%
-      layout(
-        title = "U.S. Foreign Aid Disbursements with purpose 'Family planning'",
-        yaxis = list(title = "Disbursements Received (USD)"),
-        margin = list(l=100, b=100),
-        barmode = 'group'
+    layout(
+      title = "U.S. Foreign Aid Disbursements with purpose 'Family planning'",
+      yaxis = list(title = "Disbursements Received (USD)"),
+      margin = list(l=50, r=50, b=150),
+      barmode = 'group'
+    )
+    
+    # draw a new bar for each year
+    # TODO: maybe apply this to sectors/purposes instead and just sum all years
+    
+      print(p)
+      p <- add_trace(
+        p,
+        y = filter(yearly, fiscal_year==as.character(2010))$yearly_disbursements %>% head(10),
+        name = as.character(2010)
       )
+      # next steps: bar chart grouping by purposes for each of these NGOs
+      # group by "gag or non gag", stack by "purpose fp or non-fp"
   })
 }
