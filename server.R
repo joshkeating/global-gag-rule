@@ -25,7 +25,7 @@ function(input, output, session) {
     UNviz1 <- ggplot(africanData, aes(x=Survey_End_Year, y = Selected_Variable, group=Country_Area)) + 
       geom_line(aes(colour= Country))+
       geom_point(aes(colour = Country))+
-      geom_vline(xintercept = c(1984, 1993, 2001, 2009), linetype="dotted")
+      geom_vline(xintercept = c(1984, 1993, 2001, 2009), linetype="dotted")+
       labs(title = "Married/In-Union Women", x = "Year", y = input$y)
 
     ggplotly(UNviz1)
