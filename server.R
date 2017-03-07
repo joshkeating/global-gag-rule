@@ -2,6 +2,7 @@
 library(shiny)
 library(dplyr)
 library(plotly)
+library(scales)
 
 function(input, output, session) {
   WHO_data <- read.csv("./data/sub-saharan-exposure-and-maternal-mortality", stringsAsFactors = FALSE)
