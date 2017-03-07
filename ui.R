@@ -56,9 +56,9 @@ navbarPage("Global Gag Rule",
                     )
                     
            ),
-           tabPanel("Foreign Aid Breakdown",
+           tabPanel("How NGOs are affected",
                     fluidPage(
-                      titlePanel("The Global Impact of U.S. Foreign Aid Programs"),
+                      titlePanel("NGO funding"),
                       plotlyOutput("aidplot1")
                     )
            )

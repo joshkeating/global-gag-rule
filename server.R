@@ -73,10 +73,54 @@ function(input, output, session) {
   })
   
   output$aidplot1 <- renderPlotly({
-    sum_by_NGO <- arrange(aggregate(as.numeric(aid_data$constant_amount), by=list(NGO_Name=aid_data$channel_name, NGO_ID=aid_data$channel_id), FUN=sum), desc(x))
-    sum_by_NGO <- head(sum_by_NGO, 20)
-    # first chart: rankings of all "health and population" NGOs by total disbursement
-    # limit to top 20 NGOs
-    p <- plot_ly(sum_by_NGO, type = "bar", x = sum_by_NGO$NGO_Name, y = sum_by_NGO$x)
+    ngo_fp <- filter(aid_data, dac_purpose_name == "Family planning")
+    yearly <- group_by(ngo_fp, channel_name, fiscal_year) %>% summarize(yearly_disbursements=sum(as.numeric(constant_amount))) %>% arrange(desc(yearly_disbursements))
+    total <- summarize(yearly, total_disbursements=sum(as.numeric(yearly_disbursements)))
+    #sum_ngo <- group_by(ngo_fp, NGO=channel_name, Year=fiscal_year) %>% summarize(total_disbursements=sum(as.numeric(constant_amount))) %>% arrange(desc(total_disbursements)) %>% head(10)
+    # first chart: rankings of all "health and population" NGOs by total disbursement amount
+    # limit to top 10 NGOs
+    p <- plot_ly(
+      yearly,
+      name = "2016",
+      type = "bar",
+      x = filter(yearly, fiscal_year=="2016")$channel_name %>% head(10),
+      y = filter(yearly, fiscal_year=="2016")$yearly_disbursements %>% head(10),
+      height = 800,
+      orientation = 'v'
+    ) %>%
+      add_trace(
+        y = filter(yearly, fiscal_year=="2015")$yearly_disbursements %>% head(10),
+        name = "2015"
+      ) %>%
+      add_trace(
+        y = filter(yearly, fiscal_year=="2014")$yearly_disbursements %>% head(10),
+        name = "2014"
+      ) %>%
+      add_trace(
+        y = filter(yearly, fiscal_year=="2013")$yearly_disbursements %>% head(10),
+        name = "2013"
+      ) %>%
+      add_trace(
+        y = filter(yearly, fiscal_year=="2012")$yearly_disbursements %>% head(10),
+        name = "2012"
+      ) %>%
+      add_trace(
+        y = filter(yearly, fiscal_year=="2011")$yearly_disbursements %>% head(10),
+        name = "2011"
+      ) %>%
+      add_trace(
+        y = filter(yearly, fiscal_year=="2010")$yearly_disbursements %>% head(10),
+        name = "2010"
+      ) %>%
+      add_trace(
+        y = filter(yearly, fiscal_year=="2015")$yearly_disbursements %>% head(10),
+        name = "2009"
+      ) %>%
+      layout(
+        title = "U.S. Foreign Aid Disbursements with purpose 'Family planning'",
+        yaxis = list(title = "Disbursements Received (USD)"),
+        margin = list(l=100, b=100),
+        barmode = 'group'
+      )
   })
 }
