@@ -30,7 +30,8 @@ function(input, output, session) {
       geom_line(aes(colour= Country))+
       geom_point(aes(colour = Country))+
       geom_vline(xintercept = c(1984, 1993, 2001, 2009), linetype="dotted")+
-      labs(title = "Married/In-Union Women", x = "Year", y = input$y)
+      labs(title = "Married/In-Union Women", x = "Year", y = input$y) +
+      theme_bw()
 
     ggplotly(UNviz1)
   })
