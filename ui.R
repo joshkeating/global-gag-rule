@@ -26,7 +26,7 @@ navbarPage("Global Gag Rule",
                     )
            ),
            
-           tabPanel("Viz 2",
+           tabPanel("Abortions and Maternal Mortality",
                     fluidPage(
                       
                       titlePanel("Induced Abortions and Maternal Mortality in Sub-Saharan African Countries"),
