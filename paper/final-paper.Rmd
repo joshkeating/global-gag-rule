@@ -5,7 +5,7 @@ output:
     keep_tex: true
     fig_caption: true
     latex_engine: pdflatex
-    template: /home/josh/School_16-17/Q2/info498c/project/global-gag-rule/paper/templates/svm-latex-ms.tex
+    template: ./templates/svm-latex-ms.tex
 title: "Global Effects Of The Mexico City Policy"
 author:
 - name: Joshua Keating, Peter Freschi, and John Harrison
