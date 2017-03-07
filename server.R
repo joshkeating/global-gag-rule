@@ -5,6 +5,7 @@ library(plotly)
 
 WHO_data <- read.csv("./data/sub-saharan-exposure-and-maternal-mortality", stringsAsFactors = FALSE)
 UN_data <- read.csv('./data/UN.csv', na.strings="..", stringsAsFactors = FALSE)
+aid_data <- read.csv('data/foreign-aid.csv', stringsAsFactors = FALSE)
 colnames(WHO_data)[5] <- "Number_Abortions"
 
 UNyOpts1 <- c("CP_Any_Method", "CP_Any_Modern_Method", "CP_Any_Traditional_Method", "UN_Unmet_Need_Total", "Demand_Satisfied_By_Modern_Methods")
@@ -39,5 +40,11 @@ function(input, output, session) {
     
     ggplotly(WHOviz)
   })
-  
+  output$aidplot1 <- renderPlotly({
+    sum_by_NGO <- arrange(aggregate(as.numeric(aid_data$constant_amount), by=list(NGO_Name=aid_data$channel_name, NGO_ID=aid_data$channel_id), FUN=sum), desc(x))
+    sum_by_NGO <- head(sum_by_NGO, 20)
+    # first chart: rankings of all "health and population" NGOs by total disbursement
+    # limit to top 20 NGOs
+    p <- plot_ly(sum_by_NGO, type = "bar", x = sum_by_NGO$NGO_Name, y = sum_by_NGO$x)
+  })
 }
