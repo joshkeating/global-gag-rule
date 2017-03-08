@@ -12,10 +12,20 @@ by_NGO <- group_by(aid_data, channel_id)
 # NOT filtered by "purpose"
 #sum_by_NGO <- arrange(aggregate(as.numeric(aid_data$constant_amount), by=list(NGO_Name=aid_data$channel_name, NGO_ID=aid_data$channel_id), FUN=sum), desc(x))
 
-# names of all categories
-# distinct(aid_data, dac_purpose_name)
-ngo <- filter(aid_data, dac_purpose_name == "Family planning", channel_name %in% c("John Snow International", "Jhpiego Corporation"))
-yeardata <- group_by(ngo, channel_name, fiscal_year) %>% summarize(yearly_disbursements=sum(as.numeric(constant_amount))) %>% arrange(desc(yearly_disbursements))
-#total <- summarize(yearly, total_disbursements=sum(as.numeric(yearly_disbursements)))
-#sum_ngo <- group_by(ngo_fp, channel_name, fiscal_year) %>% summarize(yearly_disbursements=sum(as.numeric(constant_amount))) %>% summarize(total_disbursements=sum(as.numeric(yearly_disbursements)))
-#sum_ngo <- group_by(ngo_fp, NGO=channel_name, Year=fiscal_year) %>% summarize(total_disbursements=sum(as.numeric(constant_amount))) %>% arrange(desc(total_disbursements)) %>% head(10)
+
+# data for ngos providing family planning services
+ngo_fp <- filter(aid_data, dac_purpose_name == "Family planning")
+# disbursements for fp NGOs grouped by year
+yearly <- group_by(ngo_fp, NGO=channel_name, fiscal_year) %>% summarize(yearly_disbursements=sum(as.numeric(constant_amount))) %>% arrange(desc(yearly_disbursements))
+# total disbursement for fp ngos
+total <- summarize(yearly, total_disbursements=sum(as.numeric(yearly_disbursements)))
+# NGOs with the highest amount of total disbursement for family planning
+top_total <- arrange(total, desc(total_disbursements)) %>% head(10)
+# yearly disbursement for top NGOs
+top_yearly <- filter(yearly, NGO %in% unique(top_total$NGO))
+
+non_fp <- filter(aid_data, channel_name %in% unique(top_total$NGO))
+# non fp disbursements grouped by NGO, and summed by purpose
+purpose_non_fp <- group_by(non_fp, NGO=channel_name, Purpose=dac_purpose_name) %>% summarize(purpose_disbursements=sum(as.numeric(constant_amount))) %>% arrange(desc(purpose_disbursements))
+# total non fp disbursements by purpose
+total_non_fp <- summarize(purpose_non_fp, total_disbursements=sum(as.numeric(purpose_disbursements)))

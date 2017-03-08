@@ -7,6 +7,7 @@ UNyOpts1 <- c("CP_Any_Method", "CP_Any_Modern_Method", "CP_Any_Traditional_Metho
 names(UNyOpts1) <- c("Contraceptive Prevalence", "Contraceptive (Modern) Prevalence", "Contraceptive (Traditional) Prevalence", "% with Unmet Needs for Family Planning", "Proportion of Family Planning Demand Satisfied via Modern Methods")
 countries <- c("Angola", "Benin", "Burundi", "Burkina Faso", "Cabo Verde", "Central African Republic", "Chad", "Comoros", "Djibouti", "Equatorial Guinea", "Eritrea", "Ethiopia", "Gabon", "Gambia", "Ghana", "Guinea-Bissau", "Guinea", "Kenya", "Liberia", "Madagascar", "Malawi", "Mali", "Mauritania", "Mozambique", "Niger", "Nigeria", "Rwanda", "Sao Tome and Principe","Senegal", "Sierra Leone", "the Seychelles", "Somalia", "South Sudan", "Sudan", "Swaziland", "Uganda", "United Republic of Tanzania", "Zambia", "Zimbabwe")
 
+ngo_select <- c("John Snow International", "Jhpiego Corporation", "Pathfinder International", "EngenderHealth", "Marie Stopes International", "Management Sciences for Health", "FHI 360", "Population Services International", "Population Council", "IntraHealth International")
 
 navbarPage("Global Gag Rule",
            
@@ -109,11 +110,13 @@ navbarPage("Global Gag Rule",
                     )
                     
            ),
-           tabPanel("How NGOs are affected",
+           tabPanel("How NGOs are Affected",
                     fluidPage(
-                      titlePanel("NGO funding"),
+                      titlePanel("The Global Gag Rule Affects Aid to NGOs Providing Family Planning Services"),
                       plotlyOutput("aidplot1"),
-                      plotlyOutput("aidplot2")
+                      plotlyOutput("aidplot2"),
+                      selectInput('ngo', 'Select an NGO', ngo_select, ngo_select[1])
                     )
+                    # dynamically show a link for information on the selected NGO
            )
 )
