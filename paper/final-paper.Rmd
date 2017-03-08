@@ -25,6 +25,7 @@ knitr::opts_chunk$set(echo = TRUE)
 
 library(dplyr)
 library(ggplot2)
+library(scales)
 
 WHO_data <- read.csv("../data/sub-saharan-exposure-and-maternal-mortality", stringsAsFactors = FALSE)
 colnames(WHO_data)[5] <- "Number_Abortions"
@@ -35,6 +36,18 @@ UN_data <- read.csv('../data/UN.csv', na.strings="..", stringsAsFactors = FALSE)
   countries <- c("Cabo Verde", "Chad", "Mali", "Zimbabwe")
 africanData <- UN_data[UN_data$Country_Area %in% countries,] %>% filter(Population == "MW")
   Country <- factor(africanData$Country_Area)
+
+aid_data <- read.csv('../data/foreign-aid.csv', stringsAsFactors = FALSE)
+# data for ngos providing family planning services
+ngo_fp <- filter(aid_data, dac_purpose_name == "Family planning")
+# disbursements for fp NGOs grouped by year
+yearly <- group_by(ngo_fp, NGO=channel_name, fiscal_year) %>% summarize(yearly_disbursements=sum(as.numeric(constant_amount))) %>% arrange(desc(yearly_disbursements))
+# total disbursement for fp ngos
+total <- summarize(yearly, total_disbursements=sum(as.numeric(yearly_disbursements)))
+# NGOs with the highest amount of total disbursement for family planning
+top_total <- arrange(total, desc(total_disbursements)) %>% head(10)
+# yearly disbursement for top NGOs
+top_yearly <- filter(yearly, NGO %in% unique(top_total$NGO))
 
 ```
 
@@ -63,7 +76,7 @@ The World Health Organization (WHO) published a study[^who_study] in partnership
 
 [^relationship]: Women living in highly exposed countries had 2.73 (95% CI: 1.95–3.82) times the odds of having an induced abortion after the policy's reinstatement than during the period from 1994 to 2000 or than women living in less exposed countries. [summary](http://www.who.int/bulletin/volumes/89/12/BLT-11-091660-table-T3.html)
 
-The U.S. Administration of International Development, as the major government agency in international aid, is responsible for reporting all official U.S. foreign aid to Congress. USAID maintains an extensively detailed database for reporting this data, which keeps records of foreign aid obligations and disbursements back to 1946. In addition to storing and reporting this data, USAID provides many projects under Barack Obama’s open government initiative in order to encourage public collaboration on research and data analysis. The Foreign Aid Explorer[^fae] provides a dashboard for querying and downloading this dataset, but also includes its own visualizations and maps that provide informative breakdowns of global financial aid. This project was invaluable for obtaining and becoming familiar with the USAID dataset we performed analysis on.
+The U.S. Administration of International Development (USAID), as the major government agency managing international aid, is responsible for reporting all official U.S. foreign aid to Congress. USAID maintains an extensively detailed database for reporting this data known as the Greenbook, which keeps records of foreign aid obligations and disbursements dating back to 1946. In addition to storing and reporting this data, USAID provides numerous open data development projects in order to encourage public collaboration on research and data analysis. The Foreign Aid Explorer[^fae] provides a dashboard for querying and downloading this dataset, but also includes its own visualizations and maps that provide informative breakdowns of global financial aid. This project was valuable for obtaining and becoming familiar with the USAID Greenbook dataset. To provide additional context for our analysis we referenced official statements from many of the NGOs that we identified as prominent in the reproductive health and family planning sector that clarify their activities in abortion counselling and their stances on the Mexico City Policy. 
 
 [^fae]: USAID is responsible for reporting official U.S. Government foreign aid to Congress and the Organization for Economic Cooperation and Development (OECD) [Foreign Aid Explorer website](https://explorer.usaid.gov/aid-dashboard.html)
 
@@ -73,7 +86,7 @@ While the World Contraceptive Use 2016 dataset included levels of contraceptive 
 
 In approaching this analysis we needed to use some unconventional methods of data sourcing. For the data on induced abortions and exposure to the “Global Gag Rule” (GGR) we scraped a `.html` table that the WHO made available through the Stanford paper published on their website. Unfortunately for us, the hierarchy of the table did not easily lend itself to reshaping in R so a considerable amount of work was done to convert it into a long form `.csv` file. We were curious about some of the potential public health effects that the ban could have had historically on an area such as maternal mortality. The hypothesis that maternal mortality would be higher after the ban was instituted was based on our intuition. We used a dataset from the World Health Organization covering maternal mortality rates from 1990 to 2015 for every country. From there we broke the data into subsets to focus on the 20 sub-Saharan countries that we had exposure data on and added those rates onto our dataset. After we had a complete dataset we performed a linear regression to gauge whether our hypothesis was correct. In the model we used the variation in policy exposure compared against variation in the rates of maternal mortality while subsetting for abortion rates in the targeted countries.
 
-(PUT JOHNS METHODS HERE)
+While the Foreign Aid Explorer dashboard presents a lot of useful visualizations, the underlying USAID dataset captures a lot more specific detail for each funding activity that we wanted to leverage to ask more specific questions. The approach that we took to investigate patterns related to the impact of the Mexico City Policy on NGO funding involved exporting a subset of this dataset for use with our own custom visualizations. We chose to limit our data to the fiscal years 2001-2016, focusing on aid disbursements to NGOs with a designated ‘sector’ value of ‘Health and Population’. This allowed us to easily work with and categorize funding that is the most likely to be impacted by the reinstatement of the policy. There were a few major questions we had about this data. Primarily, we wanted to understand the historical trends of USAID funding for NGOs that provide the specific services targeted by the Mexico City Policy. Our goal was to attempt to provide both an estimate of how much funding is ‘at stake’ and which NGOs in particular might be the most vulnerable to the implementation of the policy. While the USAID funding data does not provide enough information to determine whether a particular NGO provides abortion related counselling, education, or medical services, it allows us to target data for funding of activities with a specific ‘purpose’. By looking at funding activity with a stated purpose of ‘family planning’ our intuition was that we would be likely to find numerous disbursements to NGOs that are actively pro-choice and provide many of the specific services outlined in the policy. Our first visualization of NGO aid disbursements provides a plot summarizing the year-by-year funding of the top 10 recipients of US foreign aid for ‘family planning’, along with a comparison of each of these NGOs to the total amount of funding for family planning. While investigating this data, we observed that many of the NGOs which account for a majority of this type of aid are also highly active in other sectors related to global health and population health efforts. Our second visualization allows for exploration of the related efforts of some of the most-funded NGOs for family planning activities, and attempts to provide insight into the extent to which the global gag rule may impact funding for programs that do not fall directly under the umbrella of abortion counselling and medical services.
 
 
 # Results
@@ -113,7 +126,23 @@ Who.by.exp
 
 ```
 
-(PUT JOHNS RESULTS HERE)
+Visualizing the flow of US foreign aid to NGOs provides significant insight that helps to contextualize the impact of the global gag rule. Observing the historical trends of family planning funding disbursed to NGOs showed a significant increase in government aid following the repeal of the Mexico City Policy by President Obama in 2009. While we can’t make definite claims that this increase is directly related to the policy change, it illustrates that there has been significant growth in efforts to fund and implement family planning services since that time.
+
+```{r, echo = FALSE, warning = FALSE, fig.cap="U.S. Aid to NGOs for Family Planning (2001-2016)"}
+john.plot <- ggplot(top_yearly, aes(x=fiscal_year, y=yearly_disbursements)) +
+      scale_y_continuous(labels=dollar) +
+      geom_point(aes(colour=NGO)) +
+      geom_line(aes(colour=NGO)) +
+      geom_vline(xintercept = c(2009), linetype="dotted") +
+      labs(title = "U.S. Aid to NGOs for family planning", x = "Fiscal Year", y = "Total Disbursement (USD)") +
+      theme_bw() +
+      theme(
+        legend.position="bottom"
+      )
+john.plot
+
+```
+By narrowing our visualization to only the top 10 recipients of funding for family planning activity, we were not only able to present a clearer picture of the major organizations potentially affected by the policy, but were also able to observe that the majority of this type of aid funding passes through only a few large organizations. In particular, we noted that John Snow International (JSI), a public health research firm, accepts a large amount of USAID funding for family planning. These findings extend to our breakdown of each NGO’s total funding by purpose, which indicates that JSI has received billions of additional dollars of funding for work in other fields including Malaria control, STD control including HIV/AIDS, and a wide variety of basic health concerns. For each of the NGO’s we examined, we found a wide variety of projects in health and population sectors. These findings underscore the notion that the global gag rule has the potential to disrupt advancement of aid funding for highly important work in improving population health on a much broader scale than maternal health alone.
 
 # Discussion
 
@@ -121,12 +150,12 @@ Analysis of the United Nations’ data showed some interesting differences betwe
 
 While we did find a small correlation between sub-Saharan countries where exposure to the policy was high, it was not substantial enough to be conclusive. It should also be noted that the abortion rate estimates are lower on average than those reported in other countries. These abortion rates have been adjusted to correct for underreporting. We were also unable to find a statistically significant relationship between the variables of maternal mortality rates and the presence of the policy. This does not mean that there is no correlation between these variables, it simply means that the datasets available to us lacked sufficient amount of features to control for. Because of this we can only conclude that more research should be done in this area. With datasets that contain a wider range of variables we could control for a host of external factors that may be influencing the outcome of the data.
 
-(PUT JOHNS DISCUSSION HERE)
+Our results suggest that there is a significant degree of complexity to the flow of US aid funding through NGOs, and that a non-negligible amount of established funding is potentially at risk. Family planning efforts are often interwoven into other activities and projects which NGOs implement and focus on, such as STD prevention and general reproductive health. The results of our categorical breakdown of NGO funding motivates more formal research into the estimated effects of the global gag rule on NGOs in the population and health sector. 
+
 
 # Future Work
 
-Going forward, it is clear that the Mexico City policy has the potential for sweeping negative public health effects particularly for maternal health. Throughout our research the common theme has been the need for more data points and features. In order to truly understand the global implications of the policy, additional research must be conducted. Perhaps with more time, funding, and manpower a better analysis could be produced and an insight into the true effects of the policy reached.
-
+Going forward, it is clear that the Mexico City policy has the potential for sweeping negative public health effects particularly for maternal health. Throughout our research the common theme has been the need for more data points and features. In order to truly understand the global implications of the policy, additional research must be conducted. Perhaps with more time, funding, and manpower a better analysis could be produced and an insight into the true effects of the policy reached. With respect to USAID funding, there are more relationships that are worth exploring in the Greenbook data. With a stronger background in finance and more data on the budgets of specific NGOs, it may be worthwhile to investigate which NGOs are the most “at risk” in terms of the proportion of their budget that is provided by US foreign aid. This analysis could be extended further to understand which populations and regions would face the most significant loss of services and assistance from NGOs that provide family planning services and other vital health resources.
 
 <!--
 # References

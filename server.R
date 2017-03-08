@@ -95,17 +95,8 @@ function(input, output, session) {
     ggplotly(g)
   })
   
-  # what other services do these NGO provide?
-  # non family planning disbursements to the ngo selected from the above viz
-  non_fp <- filter(aid_data, channel_name %in% unique(top_total$NGO))
-  # non fp disbursements grouped by NGO, and summed by purpose for the selected ngo
-  purpose_non_fp <- group_by(non_fp, NGO=channel_name, Purpose=dac_purpose_name) %>% summarize(purpose_disbursements=sum(as.numeric(constant_amount))) %>% arrange(desc(purpose_disbursements))
-  # total non fp disbursements by purpose
-  total_non_fp <- summarize(purpose_non_fp, total_disbursements=sum(as.numeric(purpose_disbursements)))
-  
   output$aidplot2 <- renderPlotly({
     ngo_purpose_totals <- filter(aid_data, channel_name == input$ngo) %>% group_by(Purpose=dac_purpose_name) %>% summarize(Total_Disbursements=sum(as.numeric(constant_amount))) %>% transform(Purpose=reorder(Purpose, -Total_Disbursements))
-    #purpose_non_fp <- filter(purpose_non_fp, NGO == input$ngo) %>% transform(Purpose = reorder(Purpose, -purpose_disbursements))
     g <- ggplot(ngo_purpose_totals, aes(x=Purpose, y=Total_Disbursements, fill=Purpose)) +
       geom_bar(stat="identity") +
       scale_fill_hue(name="Purpose") +
