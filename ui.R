@@ -155,13 +155,17 @@ navbarPage("Global Gag Rule",
                         projects are faced with choosing between reducing or eliminating programs that enable pro-choice family planning and potentially losing
                         significant amounts of funding from U.S. government agencies. Operating under past incarnations of the Mexico City Policy, foreign NGOs have had
                         to certify that they will not \"perform or actively promote abortion as a method of family planning\" as a condition for receiving U.S. assistance for family planning.
-                        The current implementation of the Mexico City Policy as per the Presidential Memorandum of January 23, 2017 expands reach of this stipulation to place additional
-                        restrictions on other U.S. health assistance including HIV, maternal and child health, and reproductive healthcare."),
-                      p("Examined below are funding data obtained from the U.S. Agency for International Development which keeps official records of all U.S. foreign aid obligations and disbursements.
+                        The current implementation of the Mexico City Policy as per the Presidential Memorandum of January 23, 2017 expands to place additional
+                        restrictions on other U.S. health assistance programs including HIV, maternal and child health, and reproductive healthcare."),
+                      p("Examined below are funding data obtained from the U.S. Agency for International Development which reports official records of all U.S. foreign aid obligations and disbursements.
                         The first plot presents historical funding disbursements for NGO activities in the family planning sector. Along with yearly total U.S. disbursements to NGOs, this plot tracks
-                        yearly totals for the 10 NGOs that received the most funding for family planning for the fiscal years 2001-2016. Denoted with a dashed vertical line is the year 2009, before which the
+                        yearly totals for the 10 NGOs that received the most funding for family planning in fiscal years 2001-2016. Denoted by a dashed vertical line is the year 2009, before which the
                         Mexico City Policy had been in effect under President George W. Bush and after which the policy was rescinded by President Barack Obama."),
                       plotlyOutput("aidplot1"),
+                      p("As mentioned above, the current reinstatement of the Mexico City Policy expands its jurisdiction to block policy-violating NGOs from U.S. Federal disbursements intended
+                        for family planning as well as any U.S. global health assistance. To understand the weight of the impact this could have on funding for pivotal global health programs, the chart below presents
+                        more information about each NGO observed in the first plot. Select an NGO from the dropdown to display the various other sectors in global health that each NGO addresses and receives U.S. foreign aid
+                        funding for. Also included is additional information on each NGO, including any available indications of their stance on the Mexico City Policy, links to related articles, and ways to contribute donations to each NGO"),
                       selectInput('ngo', 'Select an NGO for more funding details', ngo_select, ngo_select[1]),
                       plotlyOutput("aidplot2"),
                       # what I would give for an ng-repeat right now
