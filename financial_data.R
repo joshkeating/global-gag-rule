@@ -14,7 +14,7 @@ by_NGO <- group_by(aid_data, channel_id)
 
 # names of all categories
 # distinct(aid_data, dac_purpose_name)
-ngo <- filter(aid_data, dac_purpose_name == "Family planning")
+ngo <- filter(aid_data, dac_purpose_name == "Family planning", channel_name %in% c("John Snow International", "Jhpiego Corporation"))
 yeardata <- group_by(ngo, channel_name, fiscal_year) %>% summarize(yearly_disbursements=sum(as.numeric(constant_amount))) %>% arrange(desc(yearly_disbursements))
 #total <- summarize(yearly, total_disbursements=sum(as.numeric(yearly_disbursements)))
 #sum_ngo <- group_by(ngo_fp, channel_name, fiscal_year) %>% summarize(yearly_disbursements=sum(as.numeric(constant_amount))) %>% summarize(total_disbursements=sum(as.numeric(yearly_disbursements)))

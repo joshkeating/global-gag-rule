@@ -70,19 +70,21 @@ function(input, output, session) {
   })
   
   # data frames for aid data
-  ngo_fp <- filter(aid_data, dac_purpose_name == "Family planning", channel_name %in% c("John Snow International", "Jhpiego Corporation"))
+  ngo_fp <- filter(aid_data, dac_purpose_name == "Family planning")
   yearly <- group_by(ngo_fp, channel_name, fiscal_year) %>% summarize(yearly_disbursements=sum(as.numeric(constant_amount))) %>% arrange(desc(yearly_disbursements))
   total <- summarize(yearly, total_disbursements=sum(as.numeric(yearly_disbursements)))
+  top_20_total <- arrange(total, desc(total_disbursements)) %>% head(10)
+  top_20_yearly <- filter(yearly, channel_name %in% unique(top_20_total$channel_name))
   
   output$aidplot1 <- renderPlotly({
-    g <- ggplot(yearly, aes(x=fiscal_year, y=yearly_disbursements)) +
+    g <- ggplot(top_20_yearly, aes(x=fiscal_year, y=yearly_disbursements)) +
       scale_y_continuous(labels=dollar) +
       geom_point(aes(colour=channel_name)) +
       geom_line(aes(colour=channel_name)) +
       geom_vline(xintercept = c(2009), linetype="dotted") +
       labs(title = "U.S. Aid to NGOs for family planning", x = "Year", y = "Yearly Total Disbursement (USD)") +
       theme_bw() +
-      theme(legend.position="none")
+      theme(legend.position="bottom")
     ggplotly(g)
   })
 }
