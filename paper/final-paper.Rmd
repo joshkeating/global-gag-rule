@@ -10,8 +10,8 @@ title: "Global Effects Of The Mexico City Policy"
 author:
 - name: Joshua Keating, Peter Freschi, and John Harrison
   affiliation: University of Washington
-abstract: "This document provides an introduction to R Markdown, argues for its benefits, and presents a sample manuscript template intended for an academic audience. I include basic syntax to R Markdown and a minimal working example of how the analysis itself can be conducted within R with the `knitr` package."
-keywords: "Mexico City policy, Global Gag Rule"
+abstract: "The recent restoration of the Mexico City policy has brought the issue of U.S. federal funding for non-governmental organisations (NGOs) to the forefront of the public consciousness. The conflict lies in the policy’s mandate that NGOs that receive federal funds agree to neither perform nor actively promote abortion as a method of family planning. This means that any organization that wishes to continue to receive US funding must cease to provide abortion related services such as; education, family planning, counseling, and training if they wish to keep their federal funding. This has the potential to disrupt important health care services, including maternal health care, in regions of the world where additional funding is most needed. In our research we looked at some of the current and historical levels of contraceptive use, family planning methods in specific regions, maternal mortality and induced abortion rates, and the flow of federal funds into some of the largest NGOs."
+keywords: "Mexico City policy, Global Gag Rule, NGOs"
 geometry: margin=1in
 fontfamily: mathpazo
 fontsize: 11pt
@@ -30,6 +30,11 @@ WHO_data <- read.csv("../data/sub-saharan-exposure-and-maternal-mortality", stri
 colnames(WHO_data)[5] <- "Number_Abortions"
 WHO.just.high <- WHO_data %>% filter(Exposure == "High")
 WHO.just.low <- WHO_data %>% filter(Exposure == "Low")
+
+UN_data <- read.csv('../data/UN.csv', na.strings="..", stringsAsFactors = FALSE)
+  countries <- c("Cabo Verde", "Chad", "Mali", "Zimbabwe")
+africanData <- UN_data[UN_data$Country_Area %in% countries,] %>% filter(Population == "MW")
+  Country <- factor(africanData$Country_Area)
 
 ```
 
@@ -84,7 +89,7 @@ In exploring the differences in the trends of induced abortion rates for the two
 Analysis of the United Nations’ data showed some interesting differences between sub-Saharan African countries with respect to contraceptive prevalence and needs for family planning. It is clear that countries like Zimbabwe have a more progressive use of contraceptives and family planning methods, and ones like Mali exhibit much less. However, our research sparks the question, why exactly is this the case? Economic and social changes in these countries must be largely driving these changes, in conjunction with the Global Gag Rule. While our initial intent was to analyze the pure effects of the policy, it is clear that this is difficult as there are many complex factors at play. Each country is often undergoing radical changes that affect women’s reproductive health and family life, only one of which is the mentioned Mexico City Policy. 
 
 
-```{r, echo = FALSE, warning = FALSE, fig.cap="Test"}
+```{r, echo = FALSE, warning = FALSE, fig.cap="Abortion Rates With High Vs. Low Exposure"}
 
 Who.by.exp <- ggplot(NULL) +
     geom_smooth(data = WHO.just.high, method = "loess", se = FALSE, aes(x=Year, y=Number_Abortions, colour = Exposure)) + 
@@ -99,6 +104,19 @@ Who.by.exp
 
 ```
 
+
+```{r, echo = FALSE, warning = FALSE, fig.cap="Married / In-Union Women"}
+
+peter.plot <- ggplot(africanData, aes(x=Survey_End_Year, y = CP_Any_Method, group=Country_Area)) + 
+  geom_line(aes(colour= Country)) + 
+  geom_point(aes(colour = Country)) + 
+  geom_vline(xintercept = c(1984, 1993, 2001, 2009), linetype="dotted") + 
+  labs(x = "Year", y = "Contraceptive Prevalence") + 
+  theme_bw()
+
+peter.plot 
+
+```
 
 # Future Work
 
