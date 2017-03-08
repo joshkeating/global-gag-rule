@@ -115,7 +115,8 @@ navbarPage("Global Gag Rule",
            tabPanel("How NGOs are affected",
                     fluidPage(
                       titlePanel("NGO funding"),
-                      plotlyOutput("aidplot1")
+                      plotlyOutput("aidplot1"),
+                      plotlyOutput("aidplot2")
                     )
            )
 )

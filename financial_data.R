@@ -10,12 +10,12 @@ by_NGO <- group_by(aid_data, channel_id)
 
 # sum of total aid funding going to each NGO
 # NOT filtered by "purpose"
-sum_by_NGO <- arrange(aggregate(as.numeric(aid_data$constant_amount), by=list(NGO_Name=aid_data$channel_name, NGO_ID=aid_data$channel_id), FUN=sum), desc(x))
+#sum_by_NGO <- arrange(aggregate(as.numeric(aid_data$constant_amount), by=list(NGO_Name=aid_data$channel_name, NGO_ID=aid_data$channel_id), FUN=sum), desc(x))
 
 # names of all categories
-distinct(aid_data, dac_purpose_name)
-ngo_fp <- filter(aid_data, dac_purpose_name == "Family planning")
-yearly <- sum_ngo <- group_by(ngo_fp, channel_name, fiscal_year) %>% summarize(yearly_disbursements=sum(as.numeric(constant_amount)))
-total <- summarize(yearly, total_disbursements=sum(as.numeric(yearly_disbursements)))
+# distinct(aid_data, dac_purpose_name)
+ngo <- filter(aid_data, dac_purpose_name == "Family planning")
+yeardata <- group_by(ngo, channel_name, fiscal_year) %>% summarize(yearly_disbursements=sum(as.numeric(constant_amount))) %>% arrange(desc(yearly_disbursements))
+#total <- summarize(yearly, total_disbursements=sum(as.numeric(yearly_disbursements)))
 #sum_ngo <- group_by(ngo_fp, channel_name, fiscal_year) %>% summarize(yearly_disbursements=sum(as.numeric(constant_amount))) %>% summarize(total_disbursements=sum(as.numeric(yearly_disbursements)))
 #sum_ngo <- group_by(ngo_fp, NGO=channel_name, Year=fiscal_year) %>% summarize(total_disbursements=sum(as.numeric(constant_amount))) %>% arrange(desc(total_disbursements)) %>% head(10)

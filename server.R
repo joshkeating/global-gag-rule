@@ -69,41 +69,20 @@ function(input, output, session) {
     ggplotly(Who.by.mm)
   })
   
+  # data frames for aid data
+  ngo_fp <- filter(aid_data, dac_purpose_name == "Family planning", channel_name %in% c("John Snow International", "Jhpiego Corporation"))
+  yearly <- group_by(ngo_fp, channel_name, fiscal_year) %>% summarize(yearly_disbursements=sum(as.numeric(constant_amount))) %>% arrange(desc(yearly_disbursements))
+  total <- summarize(yearly, total_disbursements=sum(as.numeric(yearly_disbursements)))
+  
   output$aidplot1 <- renderPlotly({
-    ngo_fp <- filter(aid_data, dac_purpose_name == "Family planning")
-    yearly <- group_by(ngo_fp, channel_name, fiscal_year) %>% summarize(yearly_disbursements=sum(as.numeric(constant_amount))) %>% arrange(desc(yearly_disbursements))
-    total <- summarize(yearly, total_disbursements=sum(as.numeric(yearly_disbursements)))
-    #sum_ngo <- group_by(ngo_fp, NGO=channel_name, Year=fiscal_year) %>% summarize(total_disbursements=sum(as.numeric(constant_amount))) %>% arrange(desc(total_disbursements)) %>% head(10)
-    # first chart: rankings of all "health and population" NGOs by total disbursement amount
-    # limit to top 10 NGOs
-    p <- plot_ly(
-      yearly,
-      name = "2016",
-      type = "bar",
-      x = filter(yearly, fiscal_year=="2016")$channel_name %>% head(10),
-      y = filter(yearly, fiscal_year=="2016")$yearly_disbursements %>% head(10),
-      height = 800,
-      orientation = 'v'
-    ) %>%
-    layout(
-      title = "U.S. Foreign Aid Disbursements with purpose 'Family planning'",
-      yaxis = list(title = "Disbursements Received (USD)"),
-      margin = list(l=50, r=50, b=150),
-      barmode = 'group'
-    )
-    
-    # draw a new bar for each year
-    # TODO: maybe apply this to sectors/purposes instead and just sum all years
-    
-      print(p)
-      p <- add_trace(
-        p,
-        y = filter(yearly, fiscal_year==as.character(2010))$yearly_disbursements %>% head(10),
-        name = as.character(2010)
-      )
-      # next steps: bar chart grouping by purposes for each of these NGOs
-      # group by "gag or non gag", stack by "purpose fp or non-fp"
-      
-      # year by year plotting of "total disbursements" and "fp disbursements" for each of these NGOs
+    g <- ggplot(yearly, aes(x=fiscal_year, y=yearly_disbursements)) +
+      scale_y_continuous(labels=dollar) +
+      geom_point(aes(colour=channel_name)) +
+      geom_line(aes(colour=channel_name)) +
+      geom_vline(xintercept = c(2009), linetype="dotted") +
+      labs(title = "U.S. Aid to NGOs for family planning", x = "Year", y = "Yearly Total Disbursement (USD)") +
+      theme_bw() +
+      theme(legend.position="none")
+    ggplotly(g)
   })
 }
