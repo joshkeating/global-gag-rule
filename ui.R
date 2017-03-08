@@ -150,6 +150,7 @@ navbarPage("Global Gag Rule",
            tabPanel("Funding for NGOs",
                     fluidPage(
                       titlePanel("Funding Data for NGOs Working on Family Planning Activities"),
+                      br(),
                       p("The primary function of the Mexico City Policy (global gag rule) is to block US Federal Funding for non-governmental organizations (NGO) that provide
                         referrals, counselling, or advocacy for abortion as a method of family planning. Under this policy, NGOs that engage in any of these
                         projects are faced with choosing between eliminating programs that enable pro-choice family planning and potentially losing
@@ -165,20 +166,23 @@ navbarPage("Global Gag Rule",
                       p("Along with yearly total U.S. disbursements to NGOs, this plot tracks
                         yearly totals for the 10 NGOs that received the most funding for family planning in fiscal years 2001-2016. A dashed vertical line denotes the year 2009, before which the
                         Mexico City Policy had been in effect under President George W. Bush and after which the policy was rescinded by President Barack Obama."),
+                      br(),
                       plotlyOutput("aidplot1"),
+                      br(),
                       br(),
                       p("As mentioned above, the recent reinstatement of the Mexico City Policy expands its jurisdiction to block policy-violating NGOs from U.S. Federal disbursements intended
                         for family planning as well as any other U.S. global health assistance."),
                       p("To illustrate the impact that this could have on funding for pivotal global health programs, the chart below presents
                         more information about each NGO observed in the first plot. Selecting an NGO from the dropdown displays the various other sectors in global health that each NGO addresses and receives U.S. foreign aid
                         funding for."),
-                      p("Also included is additional information on each NGO, including any available indication of their stance on the Mexico City Policy, links to related material, and ways to contribute donations to each NGO."),
+                      p("Also included is additional information on each NGO, providing any available indication of their stance on the Mexico City Policy, links to related material, and ways to contribute donations to each NGO."),
+                      br(),
                       selectInput('ngo', 'Select an NGO for more funding details', ngo_select, ngo_select[1]),
                       plotlyOutput("aidplot2"),
                       # what I would give for an ng-repeat right now
                       conditionalPanel(
                         condition = "input.ngo == 'John Snow International'",
-                        h1("More from this NGO"),
+                        h2("More from this NGO"),
                         br(),
                         tags$blockquote(
                           "\"It’s going to be harder for women particularly to have HIV testing and quick, immediate referrals for ARVs. Right now, we have a program in Zambia where women are referred for HIV testing and can get ARVs all in one single day. We are now potentially going to make this far more complicated for them, and there will be far more opportunities for people to drop out.\"",
@@ -189,7 +193,7 @@ navbarPage("Global Gag Rule",
                       ),
                       conditionalPanel(
                         condition = "input.ngo == 'EngenderHealth'",
-                        h1("More from this NGO"),
+                        h2("More from this NGO"),
                         br(),
                         tags$blockquote(
                           "\"It is a fundamental right for all women and girls to be allowed access to comprehensive sexual and reproductive health care. The Global Gag Rule effectively strips them of this right to make decisions in their private lives that will empower them to lift themselves out of poverty and enable them to live up to their full potential\"",
@@ -199,7 +203,7 @@ navbarPage("Global Gag Rule",
                       ),
                       conditionalPanel(
                         condition = "input.ngo == 'Pathfinder International'",
-                        h1("More from this NGO"),
+                        h2("More from this NGO"),
                         br(),
                         tags$blockquote(
                           "\"Imposing the global gag rule will force many organizations and clinicians to disregard their local laws and deny women rights that are legally theirs. Stopping organizations from speaking freely about abortion in their own countries is counter to the American commitment to free speech and promoting democracy.\"",
@@ -209,7 +213,7 @@ navbarPage("Global Gag Rule",
                       ),
                       conditionalPanel(
                         condition = "input.ngo == 'Marie Stopes International'",
-                        h1("More from this NGO"),
+                        h2("More from this NGO"),
                         br(),
                         tags$blockquote(
                           "\"All the medical evidence, as well as everything we know from our daily interactions with women, is unequivocal: if you take safe abortion services out of the reproductive healthcare package, it exposes women to risk.\"",
@@ -219,7 +223,7 @@ navbarPage("Global Gag Rule",
                       ),
                       conditionalPanel(
                         condition = "input.ngo == 'IntraHealth International'",
-                        h1("More from this NGO"),
+                        h2("More from this NGO"),
                         br(),
                         tags$blockquote("\"Our mission is to improve the performance of health workers and strengthen the systems in which they work. Our vision is that everyone, everywhere has the health care they need to thrive.\""),
                         br(),
@@ -230,7 +234,7 @@ navbarPage("Global Gag Rule",
                       ),
                       conditionalPanel(
                         condition = "input.ngo == 'Management Sciences for Health'",
-                        h1("More from this NGO"),
+                        h2("More from this NGO"),
                         br(),
                         tags$blockquote(
                           "\"Reinstating the Global Gag Rule cripples health systems that use U.S. funds for comprehensive reproductive health care, and will shut down essential programs that increase access to services for HIV/AIDS and gender-based violence. The Global Gag Rule violates the right of all women to access comprehensive sexual and reproductive health care and to make informed choices about their health.\"",
@@ -245,7 +249,7 @@ navbarPage("Global Gag Rule",
                       ),
                       conditionalPanel(
                         condition = "input.ngo == 'Population Council'",
-                        h1("More from this NGO"),
+                        h2("More from this NGO"),
                         br(),
                         tags$blockquote(
                           "\"The Mexico City Policy will have a negative effect on the lives of millions of girls, women and families around the world and will impede countless global health projects and programs\"",
@@ -260,7 +264,7 @@ navbarPage("Global Gag Rule",
                       ),
                       conditionalPanel(
                         condition = "input.ngo == 'Population Services International'",
-                        h1("More from this NGO"),
+                        h2("More from this NGO"),
                         br(),
                         tags$ul(
                           tags$li(a(href="http://www.psi.org/president-trump-threatens-womens-health-vip-conference-call/", "Public conference call denouncing the global gag rule")),
