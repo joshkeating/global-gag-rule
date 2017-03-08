@@ -1,0 +1,11 @@
+name: global-gag-rule
+title: global-gag-rule
+account: joshkeating
+server: shinyapps.io
+appId: 162173
+bundleId: 738691
+url: https://joshkeating.shinyapps.io/global-gag-rule/
+when: 1488961224.66068
+asMultiple: FALSE
+asStatic: FALSE
+ignoredFiles: LICENSE|README.md|UNdataanalysis.R|WHOdataanalysis.R|paper/final-paper.Rmd|paper/final-paper.pdf|paper/final-paper.tex|paper/final-paper_files/figure-latex/unnamed-chunk-1-1.pdf|paper/final-paper_files/figure-latex/unnamed-chunk-2-1.pdf|paper/final-paper_files/figure-latex/unnamed-chunk-3-1.pdf|paper/templates/svm-latex-ms.tex|research/MexicoCityPolicy.pdf|research/README.md
