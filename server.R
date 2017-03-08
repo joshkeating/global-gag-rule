@@ -103,7 +103,7 @@ function(input, output, session) {
       scale_fill_hue(name="Purpose") +
       scale_y_continuous(labels=dollar) +
       xlab("Purposes") + ylab("Total disbursement (2001-2016)") +
-      ggtitle("Total aid disbursement by purpose for NGOs") +
+      ggtitle(paste("Total aid disbursement by purpose for", input$ngo)) +
       theme_bw() +
       theme(
         axis.title.x=element_blank(),
@@ -113,15 +113,3 @@ function(input, output, session) {
     ggplotly(g)
   })
 }
-
-# investment in family planning increased under obama admin for notable NGOs
-# what about totals for family planning? (regardless of NGO?) (maybe this should come first?)
-
-# Outline of presentation:
-# show growth in family planning funding (fp yearly totalled viz)
-# show which NGOs saw growth under Obama (top 10 viz) (John snow is a notable example of huge increase)
-# (maybe) show the number of NGOs engaging in FP work over time (plot number of NGOs over year) (GGR impacts many of these NGOs the hardest)
-# illustrate how each NGO receives funding for other health related work (purpose bar chart per top 10 NGO)
-# breakdown of funding by income area (bar chart?)
-# links to NGOs statements on the issue (quote from FHOK, followed by quotes from John Snow about partners)
-# how to support these organizations (links to donation, advocacy, petitions, call your senator etc.)

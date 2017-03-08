@@ -151,9 +151,100 @@ navbarPage("Global Gag Rule",
                     fluidPage(
                       titlePanel("Funding Data for NGOs Working on Family Planning Activities"),
                       plotlyOutput("aidplot1"),
-                      selectInput('ngo', 'Select an NGO', ngo_select, ngo_select[1]),
-                      plotlyOutput("aidplot2")
+                      selectInput('ngo', 'Select an NGO for more funding details', ngo_select, ngo_select[1]),
+                      plotlyOutput("aidplot2"),
+                      # what I would give for an ng-repeat right now
+                      conditionalPanel(
+                        condition = "input.ngo == 'John Snow International'",
+                        h1("More from this NGO"),
+                        br(),
+                        tags$blockquote(
+                          "\"It’s going to be harder for women particularly to have HIV testing and quick, immediate referrals for ARVs. Right now, we have a program in Zambia where women are referred for HIV testing and can get ARVs all in one single day. We are now potentially going to make this far more complicated for them, and there will be far more opportunities for people to drop out.\"",
+                          br(),
+                          a(href="http://jsi.com/JSIInternet/Newsroom/newsitem/display.cfm?a=1&id=2029", "- Andrew Fullem, director of the HIV and Infectious Diseases Center at John Snow, Inc")
+                        ),
+                        tags$blockquote("\"JSI stands with more than 140 partners in opposition to the U.S.-imposed Global Gag Rule, a policy that will leave millions of women and their families in the developing world without access to the critical health services that they need.\"")
+                      ),
+                      conditionalPanel(
+                        condition = "input.ngo == 'EngenderHealth'",
+                        h1("More from this NGO"),
+                        br(),
+                        tags$blockquote(
+                          "\"It is a fundamental right for all women and girls to be allowed access to comprehensive sexual and reproductive health care. The Global Gag Rule effectively strips them of this right to make decisions in their private lives that will empower them to lift themselves out of poverty and enable them to live up to their full potential\"",
+                          br(),
+                          a(href="https://www.engenderhealth.org/media/2017/01-23-global-gag-rule-reinstated.php", "- Ulla Müller, President and CEO of EngenderHealth")
+                        )
+                      ),
+                      conditionalPanel(
+                        condition = "input.ngo == 'Pathfinder International'",
+                        h1("More from this NGO"),
+                        br(),
+                        tags$blockquote(
+                          "\"Imposing the global gag rule will force many organizations and clinicians to disregard their local laws and deny women rights that are legally theirs. Stopping organizations from speaking freely about abortion in their own countries is counter to the American commitment to free speech and promoting democracy.\"",
+                          br(),
+                          a(href="http://www.pathfinder.org/global-gag-rule-101/", "- Caroline Crosby, CEO of Pathfinder International")
+                        )
+                      ),
+                      conditionalPanel(
+                        condition = "input.ngo == 'Marie Stopes International'",
+                        h1("More from this NGO"),
+                        br(),
+                        tags$blockquote(
+                          "\"All the medical evidence, as well as everything we know from our daily interactions with women, is unequivocal: if you take safe abortion services out of the reproductive healthcare package, it exposes women to risk.\"",
+                          br(),
+                          a(href="https://mariestopes.org/news/2017/1/re-enactment-of-the-mexico-city-policy/", "- Marjorie Newman-Williams, Vice-President and Director of Marie Stopes International’s international operations")
+                        )
+                      ),
+                      conditionalPanel(
+                        condition = "input.ngo == 'IntraHealth International'",
+                        h1("More from this NGO"),
+                        br(),
+                        tags$blockquote("\"Our mission is to improve the performance of health workers and strengthen the systems in which they work. Our vision is that everyone, everywhere has the health care they need to thrive.\""),
+                        br(),
+                        tags$ul(
+                          tags$li(a(href="https://www.intrahealth.org/donate-now", "Accepting donations")),
+                          tags$li(a(href="https://www.refugeesinternational.org/advocacy-letters-1/global-gag-rule", "Endorses the Coalition Statement on Opposing the Gag Rule"))
+                        )
+                      ),
+                      conditionalPanel(
+                        condition = "input.ngo == 'Management Sciences for Health'",
+                        h1("More from this NGO"),
+                        br(),
+                        tags$blockquote(
+                          "\"Reinstating the Global Gag Rule cripples health systems that use U.S. funds for comprehensive reproductive health care, and will shut down essential programs that increase access to services for HIV/AIDS and gender-based violence. The Global Gag Rule violates the right of all women to access comprehensive sexual and reproductive health care and to make informed choices about their health.\"",
+                          br(),
+                          a(href="https://www.msh.org/news-events/press-room/msh-statement-on-the-imposition-of-the-global-gag-rule", "Official statement on the imposition of the global gag rule")
+                        ),
+                        br(),
+                        tags$ul(
+                          tags$li(a(href="https://www.msh.org/donate", "Accepting donations")),
+                          tags$li(a(href="https://www.refugeesinternational.org/advocacy-letters-1/global-gag-rule", "Endorses the Coalition Statement on Opposing the Gag Rule"))
+                        )
+                      ),
+                      conditionalPanel(
+                        condition = "input.ngo == 'Population Council'",
+                        h1("More from this NGO"),
+                        br(),
+                        tags$blockquote(
+                          "\"The Mexico City Policy will have a negative effect on the lives of millions of girls, women and families around the world and will impede countless global health projects and programs\"",
+                          br(),
+                          a(href="http://www.popcouncil.org/news/u.s.-governments-expanded-mexico-city-policy-threatens-womens-health", "Julia Bunting, Population Council president")
+                        ),
+                        br(),
+                        tags$ul(
+                          tags$li(a(href="http://www.popcouncil.org/donate", "Accepting donations")),
+                          tags$li(a(href="https://www.refugeesinternational.org/advocacy-letters-1/global-gag-rule", "Endorses the Coalition Statement on Opposing the Gag Rule"))
+                        )
+                      ),
+                      conditionalPanel(
+                        condition = "input.ngo == 'Population Services International'",
+                        h1("More from this NGO"),
+                        br(),
+                        tags$ul(
+                          tags$li(a(href="http://www.psi.org/president-trump-threatens-womens-health-vip-conference-call/", "Public conference call denouncing the global gag rule")),
+                          tags$li(a(href="https://give.psi.org/secure/year-of-healthy-life?ms=toplink", "Accepting donations"))
+                        )
+                      )
                     )
-                    # TODO (maybe):dynamically show a link for information on the selected NGO
-           )
+          )
 )
