@@ -106,15 +106,17 @@ function(input, output, session) {
   output$aidplot2 <- renderPlotly({
     ngo_purpose_totals <- filter(aid_data, channel_name == input$ngo) %>% group_by(Purpose=dac_purpose_name) %>% summarize(Total_Disbursements=sum(as.numeric(constant_amount))) %>% transform(Purpose=reorder(Purpose, -Total_Disbursements))
     #purpose_non_fp <- filter(purpose_non_fp, NGO == input$ngo) %>% transform(Purpose = reorder(Purpose, -purpose_disbursements))
-    g <- ggplot(ngo_purpose_totals, aes(x=Purpose, y=Total_Disbursements)) +
+    g <- ggplot(ngo_purpose_totals, aes(x=Purpose, y=Total_Disbursements, fill=Purpose)) +
       geom_bar(stat="identity") +
-      scale_fill_hue(name="Purpose for disbursement") +
+      scale_fill_hue(name="Purpose") +
       scale_y_continuous(labels=dollar) +
       xlab("Purposes") + ylab("Total disbursement (2001-2016)") +
       ggtitle("Total aid disbursement by purpose for family planning NGOs") +
       theme_bw() +
       theme(
-        legend.position="bottom"
+        axis.title.x=element_blank(),
+        axis.text.x=element_blank(),
+        axis.ticks.x=element_blank()
       )
     ggplotly(g)
   })

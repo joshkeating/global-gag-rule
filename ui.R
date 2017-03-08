@@ -151,9 +151,9 @@ navbarPage("Global Gag Rule",
                     fluidPage(
                       titlePanel("The Global Gag Rule Affects Aid to NGOs Providing Family Planning Services"),
                       plotlyOutput("aidplot1"),
-                      plotlyOutput("aidplot2"),
-                      selectInput('ngo', 'Select an NGO', ngo_select, ngo_select[1])
+                      selectInput('ngo', 'Select an NGO', ngo_select, ngo_select[1]),
+                      plotlyOutput("aidplot2")
                     )
-                    # dynamically show a link for information on the selected NGO
+                    # TODO (maybe):dynamically show a link for information on the selected NGO
            )
 )
