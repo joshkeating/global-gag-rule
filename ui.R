@@ -43,8 +43,8 @@ navbarPage("Global Gag Rule",
                     
            ),
            
-           tabPanel("Viz 1",
-                    titlePanel("Measuring Reproductive Health for Married/In-Union Women in Sub-Saharan African Countries"),
+           tabPanel("Measuring Reproductive Health",
+                    titlePanel("Measuring Reproductive Health in Sub-Saharan African Countries"),
                     sidebarLayout(
                       sidebarPanel(
                         selectInput('y', 'Measure of Reproductive Health', names(UNyOpts1), names(UNyOpts1)[[1]])
