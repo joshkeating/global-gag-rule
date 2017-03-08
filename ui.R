@@ -15,7 +15,7 @@ navbarPage("Global Gag Rule",
            tabPanel("Summary", 
                     fluidPage(
                       titlePanel("Overview And Impact Of The Mexico City Policy "),
-                      h4("Or, The Global Gag Rule"),
+                      h4("Also Known As - The Global Gag Rule"),
                       br(),
                       p("The issue of abortion in the United States is one that is fiercely debated and divides large segments
                         of the population. These divides are inherently partisan and therefore have led to legislation. In 1984
@@ -48,7 +48,15 @@ navbarPage("Global Gag Rule",
            tabPanel("Measuring Reproductive Health",
                     fluidPage(
                       titlePanel("Measuring Reproductive Health in Sub-Saharan African Countries"),
-                      p("While the World Contraceptive Use 2016 dataset included levels of contraceptive and family planning methods for an extensive number of countries across the world, we chose to analyze a certain subset of this data. After the raw excel data was downloaded from the United Nations’ website, it required a substantial amount of cleaning because of the format of the column headers. Once the columns were renamed, records for countries in sub-Saharan Africa were aggregated over time using dplyr. Reproductive health metrics for married/in-union women of reproductive age were examined across the time periods where the Mexico City Policy was active and inactive in the United States. Our hypothesis was that during periods where the policy was actively blocking funding, contraceptive prevalence would decrease, and unmet needs for family planning would increase. This would make sense because the policy blocks the entirety of funding for an organization if it provides any abortion counseling, so many NGOs would not be able to operate."),
+                      p("While the World Contraceptive Use 2016 dataset included levels of contraceptive and family planning methods for an 
+                        extensive number of countries across the world, we chose to analyze a certain subset of this data. After the raw excel
+                        data was downloaded from the United Nations’ website, it required a substantial amount of cleaning because of the format
+                        of the column headers. Once the columns were renamed, records for countries in sub-Saharan Africa were aggregated over
+                        time using dplyr. Reproductive health metrics for married/in-union women of reproductive age were examined across the 
+                        time periods where the Mexico City Policy was active and inactive in the United States. Our hypothesis was that during
+                        periods where the policy was actively blocking funding, contraceptive prevalence would decrease, and unmet needs for 
+                        family planning would increase. This would make sense because the policy blocks the entirety of funding for an organization
+                        if it provides any abortion counseling, so many NGOs would not be able to operate."),
                       br(),
                       sidebarLayout(
                         sidebarPanel(
@@ -59,9 +67,29 @@ navbarPage("Global Gag Rule",
                         )
                       ),
                       br(),
-                      p("An analysis of the United Nations’ data revealed several key insights. Throughout the period of 1984 to 2014, among all Sub-Saharan African countries, Zimbabwe and Cabo Verde had the highest prevalence of contraceptives, especially modern ones, which include sterilization, intra-uterine device (IUD), implant, injectables, pills, condoms, barrier methods, LAM, emergency contraception and others. This indicates a strong presence of sexual education in the population. Zimbabwe, which has a “low” exposure to the Mexico City Policy, as found in the WHO analysis, appears to have a contraceptive prevalence level that is largely unaffected by the activity and inactivity of the policy, as there is an upward increase for every year except 2011. In 2014, 66.9% of heterosexual couples in Zimbabwe used modern or traditional contraception. On the other hand, one year after, only 5.7% of the same grouping in Chad used any form of modern or traditional contraception, which was extremely low. Mali, a country that is known to have a “high” exposure to the policy, did not rise and fall in contraceptive prevalence as we anticipated in correlation with changes in the legislation. Instead, it exhibited a slower but fairly steady upward trend, just as Zimbabwe did. The proportion of family planning demand satisfied by modern methods grew every year, however, the percent with unmet needs for family planning rose until around 2001 when it began to fall. As with these, and most of the other countries, there are not many obvious trends during the time periods when the Mexico City Policy was in effect."),
+                      p("An analysis of the United Nations’ data revealed several key insights. Throughout the period of 1984 to 2014, 
+                        among all Sub-Saharan African countries, Zimbabwe and Cabo Verde had the highest prevalence of contraceptives, 
+                        especially modern ones, which include sterilization, intra-uterine device (IUD), implant, injectables, pills, condoms,
+                        barrier methods, LAM, emergency contraception and others. This indicates a strong presence of sexual education in the
+                        population. Zimbabwe, which has a “low” exposure to the Mexico City Policy, as found in the WHO analysis, appears to
+                        have a contraceptive prevalence level that is largely unaffected by the activity and inactivity of the policy, as
+                        there is an upward increase for every year except 2011. In 2014, 66.9% of heterosexual couples in Zimbabwe used 
+                        modern or traditional contraception. On the other hand, one year after, only 5.7% of the same grouping in Chad used
+                        any form of modern or traditional contraception, which was extremely low. Mali, a country that is known to have a “high”
+                        exposure to the policy, did not rise and fall in contraceptive prevalence as we anticipated in correlation with changes
+                        in the legislation. Instead, it exhibited a slower but fairly steady upward trend, just as Zimbabwe did. The proportion
+                        of family planning demand satisfied by modern methods grew every year, however, the percent with unmet needs for family
+                        planning rose until around 2001 when it began to fall. As with these, and most of the other countries, there are not many
+                        obvious trends during the time periods when the Mexico City Policy was in effect."),
                       br(),
-                      p("Analysis of the United Nations’ data showed some interesting differences between sub-Saharan African countries with respect to contraceptive prevalence and needs for family planning. It is clear that countries like Zimbabwe have a more progressive use of contraceptives and family planning methods, and ones like Mali exhibit much less. However, our research sparks the question, why exactly is this the case? Economic and social changes in these countries must be largely driving these changes, in conjunction with the Global Gag Rule. While our initial intent was to analyze the pure effects of the policy, it is clear that this is difficult as there are many complex factors at play. Each country is often undergoing radical changes that affect women’s reproductive health and family life, only one of which is the mentioned Mexico City Policy.")
+                      p("Analysis of the United Nations’ data showed some interesting differences between sub-Saharan African countries with 
+                        respect to contraceptive prevalence and needs for family planning. It is clear that countries like Zimbabwe have a 
+                        more progressive use of contraceptives and family planning methods, and ones like Mali exhibit much less. However, 
+                        our research sparks the question, why exactly is this the case? Economic and social changes in these countries must
+                        be largely driving these changes, in conjunction with the Global Gag Rule. While our initial intent was to analyze 
+                        the pure effects of the policy, it is clear that this is difficult as there are many complex factors at play. Each
+                        country is often undergoing radical changes that affect women’s reproductive health and family life, only one of 
+                        which is the mentioned Mexico City Policy.")
                       )
           ),
            

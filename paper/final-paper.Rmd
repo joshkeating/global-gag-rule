@@ -11,7 +11,7 @@ author:
 - name: Joshua Keating, Peter Freschi, and John Harrison
   affiliation: University of Washington
 abstract: "The recent restoration of the Mexico City policy has brought the issue of U.S. federal funding for non-governmental organisations (NGOs) to the forefront of the public consciousness. The conflict lies in the policy’s mandate that NGOs that receive federal funds agree to neither perform nor actively promote abortion as a method of family planning. This means that any organization that wishes to continue to receive US funding must cease to provide abortion related services such as; education, family planning, counseling, and training if they wish to keep their federal funding. This has the potential to disrupt important health care services, including maternal health care, in regions of the world where additional funding is most needed. In our research we looked at some of the current and historical levels of contraceptive use, family planning methods in specific regions, maternal mortality and induced abortion rates, and the flow of federal funds into some of the largest NGOs."
-keywords: "Mexico City policy, Global Gag Rule, NGOs"
+keywords: "Mexico City policy, Global Gag Rule, NGOs, family planning, maternal mortality"
 geometry: margin=1in
 fontfamily: mathpazo
 fontsize: 11pt
@@ -80,14 +80,20 @@ In approaching this analysis we needed to use some unconventional methods of dat
 
 An analysis of the United Nations’ data revealed several key insights. Throughout the period of 1984 to 2014, among all Sub-Saharan African countries, Zimbabwe and Cabo Verde had the highest prevalence of contraceptives, especially modern ones, which include sterilization, intra-uterine device (IUD), implant, injectables, pills, condoms, barrier methods, LAM, emergency contraception and others. This indicates a strong presence of sexual education in the population. Zimbabwe, which has a “low” exposure to the Mexico City Policy, as found in the WHO analysis, appears to have a contraceptive prevalence level that is largely unaffected by the activity and inactivity of the policy, as there is an upward increase for every year except 2011. In 2014, 66.9% of heterosexual couples in Zimbabwe used modern or traditional contraception. On the other hand, one year after, only 5.7% of the same grouping in Chad used any form of modern or traditional contraception, which was extremely low. Mali, a country that is known to have a “high” exposure to the policy, did not rise and fall in contraceptive prevalence as we anticipated in correlation with changes in the legislation. Instead, it exhibited a slower but fairly steady upward trend, just as Zimbabwe did (Figure x.). The proportion of family planning demand satisfied by modern methods grew every year, however, the percent with unmet needs for family planning rose until around 2001 when it began to fall. As with these, and most of the other countries, there are not many obvious trends during the time periods when the Mexico City Policy was in effect.
 
+```{r, echo = FALSE, warning = FALSE, fig.cap="Married / In-Union Women"}
+
+peter.plot <- ggplot(africanData, aes(x=Survey_End_Year, y = CP_Any_Method, group=Country_Area)) + 
+  geom_line(aes(colour= Country)) + 
+  geom_point(aes(colour = Country)) + 
+  geom_vline(xintercept = c(1984, 1993, 2001, 2009), linetype="dotted") + 
+  labs(x = "Year", y = "Contraceptive Prevalence") + 
+  theme_bw()
+
+peter.plot 
+
+```
+
 In exploring the differences in the trends of induced abortion rates for the two main subsets of our data, we looked at the countries that were rated with a low exposure to the policy and countries rated with a high exposure. Though we saw an increase in abortion rates in countries that are considered highly exposed to the policy, the statistical significance was negligible.(Figure x.) The two curves were calculated from “observational data” using a locally weighted smoothing (lowess) method. The linear regression model that we performed used the variation in policy exposure evaluated against variation in the rates of maternal mortality to determine of a connection could be made between the variables. The model that we performed did not show that there was a meaningful relationship.
-
-(PUT JOHNS RESULTS HERE)
-
-# Discussion
-
-Analysis of the United Nations’ data showed some interesting differences between sub-Saharan African countries with respect to contraceptive prevalence and needs for family planning. It is clear that countries like Zimbabwe have a more progressive use of contraceptives and family planning methods, and ones like Mali exhibit much less. However, our research sparks the question, why exactly is this the case? Economic and social changes in these countries must be largely driving these changes, in conjunction with the Global Gag Rule. While our initial intent was to analyze the pure effects of the policy, it is clear that this is difficult as there are many complex factors at play. Each country is often undergoing radical changes that affect women’s reproductive health and family life, only one of which is the mentioned Mexico City Policy. 
-
 
 ```{r, echo = FALSE, warning = FALSE, fig.cap="Abortion Rates With High Vs. Low Exposure"}
 
@@ -104,23 +110,19 @@ Who.by.exp
 
 ```
 
+(PUT JOHNS RESULTS HERE)
 
-```{r, echo = FALSE, warning = FALSE, fig.cap="Married / In-Union Women"}
+# Discussion
 
-peter.plot <- ggplot(africanData, aes(x=Survey_End_Year, y = CP_Any_Method, group=Country_Area)) + 
-  geom_line(aes(colour= Country)) + 
-  geom_point(aes(colour = Country)) + 
-  geom_vline(xintercept = c(1984, 1993, 2001, 2009), linetype="dotted") + 
-  labs(x = "Year", y = "Contraceptive Prevalence") + 
-  theme_bw()
+Analysis of the United Nations’ data showed some interesting differences between sub-Saharan African countries with respect to contraceptive prevalence and needs for family planning. It is clear that countries like Zimbabwe have a more progressive use of contraceptives and family planning methods, and ones like Mali exhibit much less. However, our research sparks the question, why exactly is this the case? Economic and social changes in these countries must be largely driving these changes, in conjunction with the Global Gag Rule. While our initial intent was to analyze the pure effects of the policy, it is clear that this is difficult as there are many complex factors at play. Each country is often undergoing radical changes that affect women’s reproductive health and family life, only one of which is the mentioned Mexico City Policy.
 
-peter.plot 
+While we did find a small correlation between sub-Saharan countries where exposure to the policy was high, it was not substantial enough to be conclusive. It should also be noted that the abortion rate estimates are lower on average than those reported in other countries. These abortion rates have been adjusted to correct for underreporting. We were also unable to find a statistically significant relationship between the variables of maternal mortality rates and the presence of the policy. This does not mean that there is no correlation between these variables, it simply means that the datasets available to us lacked sufficient amount of features to control for. Because of this we can only conclude that more research should be done in this area. With datasets that contain a wider range of variables we could control for a host of external factors that may be influencing the outcome of the data.
 
-```
+(PUT JOHNS DISCUSSION HERE)
 
 # Future Work
 
-At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae. Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus asperiores repellat
+Going forward, it is clear that the Mexico City policy has the potential for sweeping negative public health effects particularly for maternal health. Throughout our research the common theme has been the need for more data points and features. In order to truly understand the global implications of the policy, additional research must be conducted. Perhaps with more time, funding, and manpower a better analysis could be produced and an insight into the true effects of the policy reached.
 
 
 <!--
