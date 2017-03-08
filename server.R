@@ -104,13 +104,14 @@ function(input, output, session) {
   total_non_fp <- summarize(purpose_non_fp, total_disbursements=sum(as.numeric(purpose_disbursements)))
   
   output$aidplot2 <- renderPlotly({
-    purpose_non_fp <- filter(purpose_non_fp, NGO == input$ngo) %>% transform(Purpose = reorder(Purpose, -purpose_disbursements))
-    g <- ggplot(purpose_non_fp, aes(x=NGO, y=purpose_disbursements, fill=Purpose)) +
-      geom_bar(stat="identity", position=position_dodge()) +
+    ngo_purpose_totals <- filter(aid_data, channel_name == input$ngo) %>% group_by(Purpose=dac_purpose_name) %>% summarize(Total_Disbursements=sum(as.numeric(constant_amount))) %>% transform(Purpose=reorder(Purpose, -Total_Disbursements))
+    #purpose_non_fp <- filter(purpose_non_fp, NGO == input$ngo) %>% transform(Purpose = reorder(Purpose, -purpose_disbursements))
+    g <- ggplot(ngo_purpose_totals, aes(x=Purpose, y=Total_Disbursements)) +
+      geom_bar(stat="identity") +
       scale_fill_hue(name="Purpose for disbursement") +
       scale_y_continuous(labels=dollar) +
-      xlab("NGO") + ylab("Total disbursement (2001-2016)") +
-      ggtitle("Related funding to notable family planning NGOs") +
+      xlab("Purposes") + ylab("Total disbursement (2001-2016)") +
+      ggtitle("Total aid disbursement by purpose for family planning NGOs") +
       theme_bw() +
       theme(
         legend.position="bottom"
