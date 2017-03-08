@@ -128,20 +128,18 @@ Who.by.exp
 
 Visualizing the flow of US foreign aid to NGOs provides significant insight that helps to contextualize the impact of the global gag rule. Observing the historical trends of family planning funding disbursed to NGOs showed a significant increase in government aid following the repeal of the Mexico City Policy by President Obama in 2009. While we can’t make definite claims that this increase is directly related to the policy change, it illustrates that there has been significant growth in efforts to fund and implement family planning services since that time.
 
-```{r, echo = FALSE, warning = FALSE, fig.cap="U.S. Aid to NGOs for Family Planning (2001-2016)"}
+```{r, echo = FALSE, warning = FALSE, fig.cap="U.S. Aid to NGOs for Family Planning"}
 john.plot <- ggplot(top_yearly, aes(x=fiscal_year, y=yearly_disbursements)) +
       scale_y_continuous(labels=dollar) +
       geom_point(aes(colour=NGO)) +
       geom_line(aes(colour=NGO)) +
       geom_vline(xintercept = c(2009), linetype="dotted") +
-      labs(title = "U.S. Aid to NGOs for family planning", x = "Fiscal Year", y = "Total Disbursement (USD)") +
-      theme_bw() +
-      theme(
-        legend.position="bottom"
-      )
+      labs(x = "Fiscal Year", y = "Total Disbursement (USD)") +
+      theme_bw()
 john.plot
 
 ```
+
 By narrowing our visualization to only the top 10 recipients of funding for family planning activity, we were not only able to present a clearer picture of the major organizations potentially affected by the policy, but were also able to observe that the majority of this type of aid funding passes through only a few large organizations. In particular, we noted that John Snow International (JSI), a public health research firm, accepts a large amount of USAID funding for family planning. These findings extend to our breakdown of each NGO’s total funding by purpose, which indicates that JSI has received billions of additional dollars of funding for work in other fields including Malaria control, STD control including HIV/AIDS, and a wide variety of basic health concerns. For each of the NGO’s we examined, we found a wide variety of projects in health and population sectors. These findings underscore the notion that the global gag rule has the potential to disrupt advancement of aid funding for highly important work in improving population health on a much broader scale than maternal health alone.
 
 # Discussion
