@@ -86,12 +86,10 @@ function(input, output, session) {
       scale_y_continuous(labels=dollar) +
       geom_point(aes(colour=NGO)) +
       geom_line(aes(colour=NGO)) +
+      ggtitle("U.S. Aid to NGOs for family planning (2001-2016)") +
       geom_vline(xintercept = c(2009), linetype="dotted") +
-      labs(title = "U.S. Aid to NGOs for family planning", x = "Fiscal Year", y = "Total Disbursement (USD)") +
-      theme_bw() +
-      theme(
-        legend.position="bottom"
-      )
+      labs(x = "Fiscal Year", y = "Total Disbursement (USD)") +
+      theme_bw()
     ggplotly(g)
   })
   
@@ -102,7 +100,7 @@ function(input, output, session) {
       scale_fill_hue(name="Purpose") +
       scale_y_continuous(labels=dollar) +
       xlab("Purposes") + ylab("Total disbursement (2001-2016)") +
-      ggtitle("Total aid disbursement by purpose for family planning NGOs") +
+      ggtitle("Total aid disbursement by purpose for NGOs") +
       theme_bw() +
       theme(
         axis.title.x=element_blank(),
