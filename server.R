@@ -3,22 +3,18 @@ library(shiny)
 library(dplyr)
 library(plotly)
 
-WHO_data <- read.csv("./data/sub-saharan-exposure-and-maternal-mortality", stringsAsFactors = FALSE)
-UN_data <- read.csv('./data/UN.csv', na.strings="..", stringsAsFactors = FALSE)
-aid_data <- read.csv('data/foreign-aid.csv', stringsAsFactors = FALSE)
-colnames(WHO_data)[5] <- "Number_Abortions"
-
-WHO.just.high <- WHO_data %>% filter(Exposure == "High")
-WHO.just.low <- WHO_data %>% filter(Exposure == "Low")
-
-UNyOpts1 <- c("CP_Any_Method", "CP_Any_Modern_Method", "CP_Any_Traditional_Method", "UN_Unmet_Need_Total", "Demand_Satisfied_By_Modern_Methods")
-names(UNyOpts1) <- c("Contraceptive Prevalence", "Contraceptive (Modern) Prevalence", "Contraceptive (Traditional) Prevalence", "% with Unmet Needs for Family Planning", "Proportion of Family Planning Demand Satisfied via Modern Methods")
-countries <- c("Angola", "Burundi", "Cabo Verde", "Central African Republic", "Chad", "Comoros", "Djibouti", "Equatorial Guinea", "Eritrea", "Gabon", "Gambia", "Guinea-Bissau", "Liberia", "Mali", "Mauritania", "Sao Tome and Principe", "the Seychelles", "Somalia", "South Sudan", "Sudan", "Zimbabwe")
-
-
 function(input, output, session) {
+  WHO_data <- read.csv("./data/sub-saharan-exposure-and-maternal-mortality", stringsAsFactors = FALSE)
+  UN_data <- read.csv('./data/UN.csv', na.strings="..", stringsAsFactors = FALSE)
+  aid_data <- read.csv('data/foreign-aid.csv', stringsAsFactors = FALSE)
+  colnames(WHO_data)[5] <- "Number_Abortions"
   
+  WHO.just.high <- WHO_data %>% filter(Exposure == "High")
+  WHO.just.low <- WHO_data %>% filter(Exposure == "Low")
   
+  UNyOpts1 <- c("CP_Any_Method", "CP_Any_Modern_Method", "CP_Any_Traditional_Method", "UN_Unmet_Need_Total", "Demand_Satisfied_By_Modern_Methods")
+  names(UNyOpts1) <- c("Contraceptive Prevalence", "Contraceptive (Modern) Prevalence", "Contraceptive (Traditional) Prevalence", "% with Unmet Needs for Family Planning", "Proportion of Family Planning Demand Satisfied via Modern Methods")
+  countries <- c("Angola", "Burundi", "Cabo Verde", "Central African Republic", "Chad", "Comoros", "Djibouti", "Equatorial Guinea", "Eritrea", "Gabon", "Gambia", "Guinea-Bissau", "Liberia", "Mali", "Mauritania", "Sao Tome and Principe", "the Seychelles", "Somalia", "South Sudan", "Sudan", "Zimbabwe")
   
   africanData <- UN_data[UN_data$Country_Area %in% countries,] %>% filter(Population == "MW")
   Country <- factor(africanData$Country_Area)
