@@ -107,5 +107,7 @@ function(input, output, session) {
       )
       # next steps: bar chart grouping by purposes for each of these NGOs
       # group by "gag or non gag", stack by "purpose fp or non-fp"
+      
+      # year by year plotting of "total disbursements" and "fp disbursements" for each of these NGOs
   })
 }
