@@ -192,7 +192,6 @@ navbarPage("Global Gag Rule",
                         tags$blockquote("\"JSI stands with more than 140 partners in opposition to the U.S.-imposed Global Gag Rule, a policy that will leave millions of women and their families in the developing world without access to the critical health services that they need.\""),
                         tags$ul(
                           tags$li(a(href="https://www.refugeesinternational.org/advocacy-letters-1/global-gag-rule", "Endorses the Coalition Statement on Opposing the Gag Rule")))
-                        )
                       ),
                       conditionalPanel(
                         condition = "input.ngo == 'EngenderHealth'",
