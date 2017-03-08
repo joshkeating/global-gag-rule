@@ -23,6 +23,8 @@ total <- summarize(yearly, total_disbursements=sum(as.numeric(yearly_disbursemen
 top_total <- arrange(total, desc(total_disbursements)) %>% head(10)
 # yearly disbursement for top NGOs
 top_yearly <- filter(yearly, NGO %in% unique(top_total$NGO))
+all_yearly <- group_by(ngo_fp, fiscal_year) %>% summarize(yearly_disbursements=sum(as.numeric(constant_amount))) %>% mutate(NGO="Total (80 NGOs)")
+all_count <- unique(ngo_fp$channel_id)
 
 non_fp <- filter(aid_data, channel_name %in% unique(top_total$NGO))
 # non fp disbursements grouped by NGO, and summed by purpose

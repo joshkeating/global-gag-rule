@@ -80,12 +80,15 @@ function(input, output, session) {
   top_total <- arrange(total, desc(total_disbursements)) %>% head(10)
   # yearly disbursement for top NGOs
   top_yearly <- filter(yearly, NGO %in% unique(top_total$NGO))
-  
+  # total fp disbursement for all NGOs by year
+  all_yearly <- group_by(ngo_fp, fiscal_year) %>% summarize(yearly_disbursements=sum(as.numeric(constant_amount))) %>% mutate(NGO="Total (80 NGOs)")
+
   output$aidplot1 <- renderPlotly({
     g <- ggplot(top_yearly, aes(x=fiscal_year, y=yearly_disbursements)) +
       scale_y_continuous(labels=dollar) +
       geom_point(aes(colour=NGO)) +
       geom_line(aes(colour=NGO)) +
+      geom_line(data=all_yearly, aes(colour=NGO)) +
       ggtitle("U.S. Aid to NGOs for family planning (2001-2016)") +
       geom_vline(xintercept = c(2009), linetype="dotted") +
       labs(x = "Fiscal Year", y = "Total Disbursement (USD)") +
