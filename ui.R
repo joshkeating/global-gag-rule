@@ -152,7 +152,7 @@ navbarPage("Global Gag Rule",
                       titlePanel("Funding Data for NGOs Working on Family Planning Activities"),
                       p("The primary function of the Mexico City Policy (global gag rule) is to block US Federal Funding for non-governmental organizations (NGO) that provide
                         referrals, counselling, or advocacy for abortion as a method of family planning. Under this policy, NGOs that engage in any of these
-                        projects are faced with choosing between reducing or eliminating programs that enable pro-choice family planning and potentially losing
+                        projects are faced with choosing between eliminating programs that enable pro-choice family planning and potentially losing
                         significant amounts of funding from U.S. government agencies. Operating under past incarnations of the Mexico City Policy, foreign NGOs have had
                         to certify that they will not \"perform or actively promote abortion as a method of family planning\" as a condition for receiving U.S. assistance for family planning.
                         The current implementation of the Mexico City Policy as per the Presidential Memorandum of January 23, 2017 expands to place additional
